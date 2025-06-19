@@ -49,7 +49,7 @@ const Header = () => {
                                     src="/logooo.png"
                                     alt="Sri Sai Interiors Logo"
                                     fill
-                                    className="object-contain brightness-125 drop-shadow-lg hover:brightness-150 hover:drop-shadow-2xl transition-all duration-500 border-4 border-yellow-300 rounded-full bg-white/30"
+                                    className="object-contain brightness-125 drop-shadow-lg hover:brightness-150 hover:drop-shadow-2xl transition-all duration-500 bg-white/30"
                                     priority
                                 />
                             </div>
