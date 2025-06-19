@@ -26,10 +26,10 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-black/40"></div>
 
             {/* Desktop Content */}
-            <div className="relative z-10 flex items-center justify-center h-full hidden md:block">
-                <div className="text-center px-4 md:px-8">
-                    {/* Desktop Enhanced Merged Box with Much Lower Position and No Glow */}
-                    <div className="bg-white/25 backdrop-blur-lg rounded-[3rem] p-8 md:p-10 max-w-3xl mx-auto shadow-lg border border-white/30 transform hover:scale-105 transition-all duration-500 mt-[32rem]">
+            <div className="relative z-10 flex items-center justify-center h-full hidden md:flex">
+                <div className="text-center px-4 md:px-8 flex items-center justify-center h-full w-full">
+                    {/* Desktop Enhanced Merged Box Centered Vertically */}
+                    <div className="bg-white/25 backdrop-blur-lg rounded-[3rem] p-8 md:p-10 max-w-3xl mx-auto shadow-lg border border-white/30 transform hover:scale-105 transition-all duration-500">
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
                             Transform Your Space with
                             <span className="block text-yellow-400 mt-3">Sri Sai Interiors</span>
@@ -61,9 +61,9 @@ const HeroSection = () => {
 
             {/* Mobile Content */}
             <div className="relative z-10 flex items-center justify-center h-full md:hidden">
-                <div className="text-center px-4">
-                    {/* Mobile Enhanced Merged Box with Much Lower Position and No Glow */}
-                    <div className="bg-white/30 backdrop-blur-lg rounded-[2rem] p-6 max-w-sm mx-auto shadow-lg border border-white/40 transform hover:scale-105 transition-all duration-500 mt-[20rem]">
+                <div className="text-center px-4 flex items-center justify-center h-full w-full">
+                    {/* Mobile Enhanced Merged Box Centered Vertically */}
+                    <div className="bg-white/30 backdrop-blur-lg rounded-[2rem] p-6 max-w-sm mx-auto shadow-lg border border-white/40 transform hover:scale-105 transition-all duration-500">
                         <h1 className="text-2xl font-black text-white mb-4 leading-tight">
                             Transform Your Space with
                             <span className="block text-yellow-400 mt-2">Sri Sai Interiors</span>
