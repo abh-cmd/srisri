@@ -104,7 +104,7 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                         initial={{ scale: 0.9, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.9, opacity: 0 }}
-                        className="relative w-full max-w-xs sm:max-w-sm md:max-w-2xl bg-gradient-to-br from-gray-900 to-black rounded-2xl shadow-2xl overflow-hidden p-2 sm:p-4 md:p-0 max-h-[90vh] overflow-y-auto"
+                        className="relative w-full max-w-xs sm:max-w-xs md:max-w-xl bg-gradient-to-br from-gray-900/80 to-black/80 rounded-2xl shadow-2xl overflow-hidden p-1 sm:p-2 md:p-4 max-h-[80vh] overflow-y-auto"
                         onClick={e => e.stopPropagation()}
                     >
                         {/* Close Button */}
