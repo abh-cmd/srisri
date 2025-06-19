@@ -73,10 +73,10 @@ const Header = () => {
                         {/* Center Title - Desktop */}
                         <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2">
                             <div className="text-center">
-                                <h1 className="text-2xl font-black text-white leading-tight">
+                                <h1 className="text-4xl font-black text-white leading-tight drop-shadow-[0_0_16px_rgba(255,255,255,0.7)] animate-header-glow">
                                     SRI SAI INTERIORS
                                 </h1>
-                                <div className="w-16 h-1 bg-yellow-400 mx-auto mt-1 rounded-full"></div>
+                                <div className="w-32 h-1 bg-yellow-400 mx-auto mt-2 rounded-full shadow-[0_0_20px_rgba(251,191,36,0.5)] animate-header-line-glow"></div>
                             </div>
                         </div>
 
@@ -117,6 +117,23 @@ const Header = () => {
                     </nav>
                 </div>
             )}
+
+            <style jsx global>{`
+                @keyframes headerGlow {
+                    0%, 100% { text-shadow: 0 0 16px rgba(255,255,255,0.7); }
+                    50% { text-shadow: 0 0 32px rgba(255,255,255,1); }
+                }
+                .animate-header-glow {
+                    animation: headerGlow 2.5s infinite alternate;
+                }
+                @keyframes headerLineGlow {
+                    0%, 100% { box-shadow: 0 0 20px 4px rgba(251,191,36,0.3); }
+                    50% { box-shadow: 0 0 40px 8px rgba(251,191,36,0.6); }
+                }
+                .animate-header-line-glow {
+                    animation: headerLineGlow 2.5s infinite alternate;
+                }
+            `}</style>
         </>
     );
 };
