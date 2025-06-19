@@ -33,13 +33,14 @@ const HeroSection = () => {
                     <motion.div
                         initial={{ opacity: 0, y: 200 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1.2, ease: 'easeOut' }}
-                        className="bg-white/5 backdrop-blur-sm rounded-3xl p-3 md:p-4 max-w-md mx-auto shadow-lg border border-white/10 transform hover:scale-105 transition-all duration-500"
+                        transition={{ duration: 1.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+                        className="bg-white/5 backdrop-blur-sm rounded-3xl px-8 py-2 md:px-12 md:py-3 max-w-2xl mx-auto shadow-lg border border-white/10 transform hover:scale-105 transition-all duration-500 min-h-[3.5rem] md:min-h-[4rem]"
                     >
-                        <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-4 leading-tight">
-                            Transform Your Space with
-                            <span className="block text-yellow-400 mt-2">Sri Sai Interiors</span>
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-2 leading-tight drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
+                            <span className="block">Transform Your Space with</span>
+                            <span className="block text-yellow-400 mt-2 drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]">Sri Sai Interiors</span>
                         </h1>
+                        <div className="w-full h-1 bg-yellow-400 mx-auto mb-4 rounded-full shadow-[0_0_16px_rgba(251,191,36,0.4)] animate-glow-line"></div>
                         
                         <p className="text-base md:text-lg lg:text-xl text-gray-200 mb-6 leading-relaxed max-w-lg mx-auto font-medium">
                             Creating beautiful, functional interiors that reflect your style and enhance your lifestyle. 
@@ -72,13 +73,14 @@ const HeroSection = () => {
                     <motion.div
                         initial={{ opacity: 0, y: 120 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1.1, ease: 'easeOut' }}
-                        className="bg-white/5 backdrop-blur-sm rounded-2xl p-2 max-w-xs mx-auto shadow-lg border border-white/10 transform hover:scale-105 transition-all duration-500"
+                        transition={{ duration: 1.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+                        className="bg-white/5 backdrop-blur-sm rounded-2xl px-4 py-1 max-w-sm mx-auto shadow-lg border border-white/10 transform hover:scale-105 transition-all duration-500 min-h-[2.5rem]"
                     >
-                        <h1 className="text-lg font-black text-white mb-3 leading-tight">
-                            Transform Your Space with
-                            <span className="block text-yellow-400 mt-2">Sri Sai Interiors</span>
+                        <h1 className="text-xl font-black text-white mb-2 leading-tight drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">
+                            <span className="block">Transform Your Space with</span>
+                            <span className="block text-yellow-400 mt-2 drop-shadow-[0_0_8px_rgba(251,191,36,0.4)]">Sri Sai Interiors</span>
                         </h1>
+                        <div className="w-full h-1 bg-yellow-400 mx-auto mb-3 rounded-full shadow-[0_0_12px_rgba(251,191,36,0.3)] animate-glow-line"></div>
                         
                         <p className="text-xs text-gray-200 mb-4 leading-relaxed mx-auto font-medium">
                             Creating beautiful, functional interiors that reflect your style and enhance your lifestyle. 
@@ -113,6 +115,16 @@ const HeroSection = () => {
             {showConsultationModal && (
                 <ConsultationModal isOpen={showConsultationModal} onClose={() => setShowConsultationModal(false)} />
             )}
+
+            <style jsx global>{`
+                @keyframes glowLine {
+                    0%, 100% { box-shadow: 0 0 16px 4px rgba(251,191,36,0.3); }
+                    50% { box-shadow: 0 0 32px 8px rgba(251,191,36,0.5); }
+                }
+                .animate-glow-line {
+                    animation: glowLine 2.5s infinite alternate;
+                }
+            `}</style>
         </section>
     );
 };
