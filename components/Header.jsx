@@ -41,15 +41,15 @@ const Header = () => {
                     : 'bg-blue-800/40 backdrop-blur-md'
             }`}>
                 <div className="container mx-auto px-4">
-                    <div className="flex items-center justify-between h-20">
+                    <div className="flex items-center justify-between h-24 md:h-28">
                         {/* Logo */}
                         <Link href="/" className="flex items-center space-x-3 group">
-                            <div className="relative w-12 h-12 md:w-14 md:h-14 transition-transform duration-300 group-hover:scale-110">
+                            <div className="relative w-16 h-16 md:w-20 md:h-20 transition-transform duration-300 group-hover:scale-110 drop-shadow-xl">
                                 <Image
-                                    src="/logo.png"
+                                    src="/logooo.png"
                                     alt="Sri Sai Interiors Logo"
                                     fill
-                                    className="object-contain brightness-125"
+                                    className="object-contain brightness-125 drop-shadow-lg hover:brightness-150 hover:drop-shadow-2xl transition-all duration-500 border-4 border-yellow-300 rounded-full bg-white/30"
                                     priority
                                 />
                             </div>
