@@ -7,7 +7,7 @@ const WhatsAppWidget = () => {
     const [showPhonePopup, setShowPhonePopup] = useState(false);
 
     const handleWhatsAppClick = () => {
-        const phoneNumber = '+919876543210'; // Replace with your actual WhatsApp number
+        const phoneNumber = '+917013825454'; // Official WhatsApp number
         const message = 'Hello! I would like to know more about your interior design services.';
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
@@ -103,7 +103,7 @@ const WhatsAppWidget = () => {
                                 </div>
                                 <div>
                                     <h3 className="font-semibold text-gray-800">Phone Number</h3>
-                                    <p className="text-gray-600">+91 98765 43210</p>
+                                    <p className="text-gray-600">+91 701 382 5454</p>
                                 </div>
                             </div>
 
@@ -138,7 +138,7 @@ const WhatsAppWidget = () => {
                             {/* Call Button */}
                             <button
                                 onClick={() => {
-                                    window.location.href = 'tel:+919876543210';
+                                    window.location.href = 'tel:+917013825454';
                                     setShowPhonePopup(false);
                                 }}
                                 className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
