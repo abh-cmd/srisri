@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -33,13 +34,20 @@ const Header = () => {
 
     return (
         <>
-            {/* Desktop Header */}
+            {/* Header (Desktop & Mobile) */}
             <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
                 isScrolled 
                     ? 'bg-blue-800/60 backdrop-blur-lg shadow-md' 
                     : 'bg-blue-800/40 backdrop-blur-md'
             }`}>
                 <div className="container mx-auto px-4">
+                    {/* Mobile Title */}
+                    <div className="block md:hidden text-center pt-3 pb-1">
+                        <h1 className="text-xl font-black text-white leading-tight drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">
+                            SRI SAI INTERIORS
+                        </h1>
+                        <div className="w-16 h-1 bg-yellow-400 mx-auto mt-1 rounded-full shadow-[0_0_10px_rgba(251,191,36,0.3)]"></div>
+                    </div>
                     <div className="flex items-center justify-between h-24 md:h-28">
                         {/* Logo */}
                         <Link href="/" className="flex items-center space-x-3 group">
@@ -98,9 +106,17 @@ const Header = () => {
                 </div>
             </header>
 
-            {/* Mobile Menu */}
+            {/* Mobile Menu with Animation */}
+            <AnimatePresence>
             {isMenuOpen && (
-                <div className="md:hidden bg-blue-900/95 backdrop-blur-lg border-t border-blue-700">
+                <motion.div
+                    key="mobile-menu"
+                    initial={{ y: -40, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -40, opacity: 0 }}
+                    transition={{ duration: 0.5, ease: [0.25, 0.8, 0.25, 1] }}
+                    className="md:hidden bg-blue-900/95 backdrop-blur-lg border-t border-blue-700 fixed top-24 left-0 right-0 z-40"
+                >
                     <nav className="py-4 space-y-2">
                         {navItems.map((item) => (
                             <Link 
@@ -115,8 +131,9 @@ const Header = () => {
                             </Link>
                         ))}
                     </nav>
-                </div>
+                </motion.div>
             )}
+            </AnimatePresence>
 
             <style jsx global>{`
                 @keyframes headerGlow {
