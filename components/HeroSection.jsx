@@ -34,7 +34,7 @@ const HeroSection = () => {
                         initial={{ opacity: 0, y: 200 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-                        className="bg-white/5 backdrop-blur-sm rounded-3xl px-4 py-1 md:px-6 md:py-2 max-w-md mx-auto shadow-lg border border-white/10 transform hover:scale-105 transition-all duration-500 min-h-[2.5rem] md:min-h-[3rem]"
+                        className="bg-white/5 backdrop-blur-sm rounded-3xl px-10 py-1 md:px-16 md:py-2 max-w-2xl mx-auto shadow-lg border border-white/10 transform hover:scale-105 transition-all duration-500 min-h-[1.5rem] md:min-h-[2rem] mt-16 md:mt-24"
                     >
                         <h1 className="text-xl md:text-2xl lg:text-3xl font-black text-white mb-2 leading-tight">
                             Transform Your Space with
@@ -74,7 +74,7 @@ const HeroSection = () => {
                         initial={{ opacity: 0, y: 120 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-                        className="bg-white/5 backdrop-blur-sm rounded-2xl px-2 py-1 max-w-xs mx-auto shadow-lg border border-white/10 transform hover:scale-105 transition-all duration-500 min-h-[1.5rem]"
+                        className="bg-white/5 backdrop-blur-sm rounded-2xl px-4 py-1 max-w-sm mx-auto shadow-lg border border-white/10 transform hover:scale-105 transition-all duration-500 min-h-[1rem] mt-8"
                     >
                         <h1 className="text-base font-black text-white mb-2 leading-tight">
                             Transform Your Space with
