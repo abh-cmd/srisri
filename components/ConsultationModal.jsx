@@ -104,7 +104,7 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                         initial={{ scale: 0.9, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.9, opacity: 0 }}
-                        className="relative w-full max-w-4xl bg-gradient-to-br from-gray-900 to-black rounded-2xl shadow-2xl overflow-hidden"
+                        className="relative w-full max-w-xs sm:max-w-sm md:max-w-2xl bg-gradient-to-br from-gray-900 to-black rounded-2xl shadow-2xl overflow-hidden p-2 sm:p-4 md:p-0 max-h-[90vh] overflow-y-auto"
                         onClick={e => e.stopPropagation()}
                     >
                         {/* Close Button */}
@@ -115,9 +115,9 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                             <MdClose className="w-6 h-6" />
                         </button>
 
-                        <div className="grid grid-cols-1 lg:grid-cols-2">
-                            {/* Left Column - Features */}
-                            <div className="p-8 bg-gradient-to-br from-amber-500/10 to-orange-500/10">
+                        <div className="grid grid-cols-1 md:grid-cols-2">
+                            {/* Left Column - Features (hidden on mobile) */}
+                            <div className="hidden md:block p-8 bg-gradient-to-br from-amber-500/10 to-orange-500/10">
                                 <h2 className="text-2xl font-noto-serif font-semibold text-white mb-8">
                                     Our Promise to You
                                 </h2>
