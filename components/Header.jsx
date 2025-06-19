@@ -29,7 +29,6 @@ const Header = () => {
         { href: "/about", label: "About Us" },
         { href: "/projects", label: "Projects" },
         { href: "/gallery", label: "Gallery" },
-        { href: "/contact", label: "Contact" },
     ];
 
     return (
@@ -68,9 +67,6 @@ const Header = () => {
                             </Link>
                             <Link href="/gallery" className="text-white hover:text-yellow-400 transition-colors duration-300 font-medium text-lg">
                                 Gallery
-                            </Link>
-                            <Link href="/contact" className="text-white hover:text-yellow-400 transition-colors duration-300 font-medium text-lg">
-                                Contact
                             </Link>
                         </nav>
 
