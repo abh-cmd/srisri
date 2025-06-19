@@ -34,7 +34,7 @@ const HeroSection = () => {
                         initial={{ opacity: 0, y: 200 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1.2, ease: 'easeOut' }}
-                        className="bg-white/20 backdrop-blur-lg rounded-3xl p-6 md:p-8 max-w-xl mx-auto shadow-lg border border-white/30 transform hover:scale-105 transition-all duration-500"
+                        className="bg-white/10 backdrop-blur-md rounded-3xl p-4 md:p-6 max-w-lg mx-auto shadow-lg border border-white/20 transform hover:scale-105 transition-all duration-500"
                     >
                         <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-4 leading-tight">
                             Transform Your Space with
@@ -73,7 +73,7 @@ const HeroSection = () => {
                         initial={{ opacity: 0, y: 120 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1.1, ease: 'easeOut' }}
-                        className="bg-white/25 backdrop-blur-lg rounded-2xl p-4 max-w-xs mx-auto shadow-lg border border-white/40 transform hover:scale-105 transition-all duration-500"
+                        className="bg-white/10 backdrop-blur-md rounded-2xl p-3 max-w-xs mx-auto shadow-lg border border-white/20 transform hover:scale-105 transition-all duration-500"
                     >
                         <h1 className="text-lg font-black text-white mb-3 leading-tight">
                             Transform Your Space with

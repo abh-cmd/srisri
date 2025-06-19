@@ -43,12 +43,12 @@ const Header = () => {
                     <div className="flex items-center justify-between h-24 md:h-28">
                         {/* Logo */}
                         <Link href="/" className="flex items-center space-x-3 group">
-                            <div className="relative w-16 h-16 md:w-20 md:h-20 transition-transform duration-300 group-hover:scale-110 drop-shadow-xl">
+                            <div className="relative w-24 h-24 md:w-32 md:h-32 transition-transform duration-300 group-hover:scale-110">
                                 <Image
                                     src="/logooo.png"
                                     alt="Sri Sai Interiors Logo"
                                     fill
-                                    className="object-contain brightness-125 drop-shadow-lg hover:brightness-150 hover:drop-shadow-2xl transition-all duration-500 bg-white/30"
+                                    className="object-contain brightness-150 drop-shadow-2xl group-hover:brightness-200 group-hover:drop-shadow-[0_0_40px_rgba(255,255,0,0.7)] transition-all duration-500 bg-white/10"
                                     priority
                                 />
                             </div>
