@@ -57,15 +57,15 @@ const Header = () => {
                             <span className="w-12 h-1 bg-yellow-400 mt-1 rounded-full shadow-[0_0_6px_rgba(251,191,36,0.2)]"></span>
                         </div>
                     </div>
-                    <div className="flex items-center justify-between h-24 md:h-28">
-                        {/* Logo */}
+                    <div className="flex items-center justify-between h-20 md:h-24">
+                        {/* Logo - smaller and vertically centered */}
                         <Link href="/" className="flex items-center space-x-3 group">
-                            <div className="relative w-24 h-24 md:w-32 md:h-32 transition-transform duration-300 group-hover:scale-110">
+                            <div className="relative w-14 h-14 md:w-20 md:h-20 transition-transform duration-300 group-hover:scale-105">
                                 <Image
                                     src="/logooo.png"
                                     alt="Sri Sai Interiors Logo"
                                     fill
-                                    className="object-contain brightness-150 drop-shadow-2xl group-hover:brightness-200 group-hover:drop-shadow-[0_0_40px_rgba(255,255,0,0.7)] transition-all duration-500 bg-white/10"
+                                    className="object-contain brightness-125 drop-shadow-md group-hover:brightness-150 group-hover:drop-shadow-[0_0_20px_rgba(255,255,0,0.4)] transition-all duration-500 bg-white/10"
                                     priority
                                 />
                             </div>
@@ -90,10 +90,10 @@ const Header = () => {
                         {/* Center Title - Desktop */}
                         <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2">
                             <div className="text-center">
-                                <h1 className="text-4xl font-black text-white leading-tight drop-shadow-[0_0_8px_rgba(255,255,255,0.4)] animate-header-glow">
+                                <h1 className="text-3xl md:text-4xl font-black text-white leading-tight drop-shadow-[0_0_6px_rgba(255,255,255,0.25)] animate-header-glow bg-gradient-to-r from-yellow-200 via-white to-yellow-300 bg-clip-text text-transparent">
                                     SRI SAI INTERIORS
                                 </h1>
-                                <div className="w-32 h-1 bg-yellow-400 mx-auto mt-2 rounded-full shadow-[0_0_10px_rgba(251,191,36,0.3)] animate-header-line-glow"></div>
+                                <div className="w-24 md:w-32 h-1 bg-yellow-400 mx-auto mt-2 rounded-full shadow-[0_0_8px_rgba(251,191,36,0.18)] animate-header-line-glow"></div>
                             </div>
                         </div>
 
@@ -146,15 +146,15 @@ const Header = () => {
 
             <style jsx global>{`
                 @keyframes headerGlow {
-                    0%, 100% { text-shadow: 0 0 8px rgba(255,255,255,0.4); }
-                    50% { text-shadow: 0 0 16px rgba(255,255,255,0.7); }
+                    0%, 100% { text-shadow: 0 0 6px rgba(255,255,255,0.25); }
+                    50% { text-shadow: 0 0 14px rgba(255,255,255,0.5); }
                 }
                 .animate-header-glow {
                     animation: headerGlow 2.5s infinite alternate;
                 }
                 @keyframes headerLineGlow {
-                    0%, 100% { box-shadow: 0 0 10px 2px rgba(251,191,36,0.15); }
-                    50% { box-shadow: 0 0 20px 4px rgba(251,191,36,0.3); }
+                    0%, 100% { box-shadow: 0 0 8px 2px rgba(251,191,36,0.12); }
+                    50% { box-shadow: 0 0 16px 4px rgba(251,191,36,0.22); }
                 }
                 .animate-header-line-glow {
                     animation: headerLineGlow 2.5s infinite alternate;
