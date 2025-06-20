@@ -119,15 +119,15 @@ const HeroSection = () => {
                 <AnimatePresence>
                     {showArrow && (
                         <motion.div
-                            initial={{ opacity: 0, y: 10 }}
+                            initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: 10 }}
+                            exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.6 }}
-                            className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center"
-                            style={{ zIndex: 20 }}
+                            className="fixed top-5 right-12 flex flex-col items-center pointer-events-none select-none"
+                            style={{ zIndex: 50 }}
                         >
-                            <span className="text-xs text-white/80 mb-1 font-semibold tracking-wide animate-pulse">Explore more</span>
-                            <FaArrowDown className="text-yellow-400 text-3xl drop-shadow-lg animate-bounce" />
+                            <span className="text-xs text-white/80 mb-1 font-semibold tracking-wide animate-pulse">Menu</span>
+                            <FaArrowDown className="text-yellow-400 text-2xl drop-shadow-lg animate-bounce rotate-90" />
                         </motion.div>
                     )}
                 </AnimatePresence>
