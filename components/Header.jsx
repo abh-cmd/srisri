@@ -51,7 +51,7 @@ const Header = () => {
                                         src="/logooo.png"
                                         alt="Sri Sai Interiors Logo"
                                         fill
-                                        className="object-contain brightness-125 drop-shadow-lg group-hover:brightness-150 group-hover:drop-shadow-[0_0_24px_rgba(255,255,0,0.25)] transition-all duration-500 bg-white/10 rounded-full"
+                                        className="object-contain brightness-125 drop-shadow-lg group-hover:brightness-150 group-hover:drop-shadow-[0_0_24px_rgba(255,255,0,0.25)] transition-all duration-500"
                                         priority
                                     />
                                 </div>
@@ -65,17 +65,17 @@ const Header = () => {
                         </div>
 
                         {/* Desktop Navigation */}
-                        <nav className="hidden md:flex items-center space-x-8">
-                            <Link href="/" className={`text-white hover:text-yellow-400 transition-all duration-300 font-semibold text-xl px-2 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400/60 active:scale-95 active:shadow-[0_0_10px_2px_rgba(251,191,36,0.25)]`}>
+                        <nav className="hidden md:flex items-center space-x-10">
+                            <Link href="/" className={`text-white hover:text-yellow-400 transition-all duration-300 font-bold text-2xl px-3 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400/60 active:scale-105 active:brightness-150 active:text-yellow-200 active:shadow-[0_0_18px_4px_rgba(251,191,36,0.25)]`}>
                                 Home
                             </Link>
-                            <Link href="/about" className={`text-white hover:text-yellow-400 transition-all duration-300 font-semibold text-xl px-2 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400/60 active:scale-95 active:shadow-[0_0_10px_2px_rgba(251,191,36,0.25)]`}>
+                            <Link href="/about" className={`text-white hover:text-yellow-400 transition-all duration-300 font-bold text-2xl px-3 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400/60 active:scale-105 active:brightness-150 active:text-yellow-200 active:shadow-[0_0_18px_4px_rgba(251,191,36,0.25)]`}>
                                 About
                             </Link>
-                            <Link href="/projects" className={`text-white hover:text-yellow-400 transition-all duration-300 font-semibold text-xl px-2 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400/60 active:scale-95 active:shadow-[0_0_10px_2px_rgba(251,191,36,0.25)]`}>
+                            <Link href="/projects" className={`text-white hover:text-yellow-400 transition-all duration-300 font-bold text-2xl px-3 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400/60 active:scale-105 active:brightness-150 active:text-yellow-200 active:shadow-[0_0_18px_4px_rgba(251,191,36,0.25)]`}>
                                 Projects
                             </Link>
-                            <Link href="/gallery" className={`text-white hover:text-yellow-400 transition-all duration-300 font-semibold text-xl px-2 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400/60 active:scale-95 active:shadow-[0_0_10px_2px_rgba(251,191,36,0.25)]`}>
+                            <Link href="/gallery" className={`text-white hover:text-yellow-400 transition-all duration-300 font-bold text-2xl px-3 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400/60 active:scale-105 active:brightness-150 active:text-yellow-200 active:shadow-[0_0_18px_4px_rgba(251,191,36,0.25)]`}>
                                 Gallery
                             </Link>
                         </nav>

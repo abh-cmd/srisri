@@ -37,7 +37,7 @@ export default function About() {
                         <div className="flex-1 flex flex-col justify-center">
                             <div className="bg-gradient-to-br from-gray-900/90 via-gray-800/80 to-gray-900/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-gray-700/60 p-8 md:p-14 text-right md:text-right flex flex-col items-end"
                                 style={{boxShadow:'0 8px 32px 0 rgba(31,38,135,0.37)', border:'1.5px solid rgba(255,255,255,0.10)'}}>
-                                <h1 className="text-4xl md:text-6xl font-extrabold font-noto-serif bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-200 to-white mb-8 drop-shadow-lg">
+                                <h1 className="text-4xl md:text-6xl font-extrabold font-noto-serif text-white mb-8 drop-shadow-lg">
                                     Transforming Spaces, Elevating Lifestyles
                                 </h1>
                             </div>
@@ -45,145 +45,52 @@ export default function About() {
                     </div>
                 </section>
 
-                {/* HOW SRI SAI INTERIORS WORKS - Flowchart */}
+                {/* PROCESS/FLOWCHART SECTION - Highlighted, Elegant */}
                 <section className="mb-24">
-                    <div className="max-w-5xl mx-auto">
-                        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-200 to-white drop-shadow-lg">How Sri Sai Interiors Works</h2>
-                        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-                            {/* Step 1 */}
-                            <div className="flex flex-col items-center">
-                                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-400 via-amber-300 to-yellow-200 flex items-center justify-center shadow-lg mb-4">
-                                    <FaRegBuilding className="text-4xl text-gray-900" />
-                                </div>
-                                <h4 className="font-bold text-lg mb-1 text-yellow-200">Consultation</h4>
-                                <p className="text-gray-200 text-center max-w-xs">We understand your needs, style, and budget.</p>
-                            </div>
-                            {/* Arrow */}
-                            <div className="hidden md:block text-5xl text-yellow-300">→</div>
-                            {/* Step 2 */}
-                            <div className="flex flex-col items-center">
-                                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-400 via-amber-300 to-yellow-200 flex items-center justify-center shadow-lg mb-4">
-                                    <FaUsers className="text-4xl text-gray-900" />
-                                </div>
-                                <h4 className="font-bold text-lg mb-1 text-yellow-200">Design & Planning</h4>
-                                <p className="text-gray-200 text-center max-w-xs">Our experts craft a personalized design and plan every detail.</p>
-                            </div>
-                            {/* Arrow */}
-                            <div className="hidden md:block text-5xl text-yellow-300">→</div>
-                            {/* Step 3 */}
-                            <div className="flex flex-col items-center">
-                                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-400 via-amber-300 to-yellow-200 flex items-center justify-center shadow-lg mb-4">
-                                    <FaRegSmile className="text-4xl text-gray-900" />
-                                </div>
-                                <h4 className="font-bold text-lg mb-1 text-yellow-200">Execution & Handover</h4>
-                                <p className="text-gray-200 text-center max-w-xs">We deliver your dream space, on time and with a smile.</p>
-                            </div>
+                  <div className="max-w-5xl mx-auto flex flex-col items-center">
+                    <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-200 to-white drop-shadow-lg tracking-tight">How We Work</h2>
+                    <p className="text-lg md:text-xl text-gray-300 mb-12 text-center max-w-2xl font-light">Our process ensures a seamless, stress-free experience from concept to completion.</p>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full">
+                      {/* Step 1 */}
+                      <div className="relative flex flex-col items-center flex-1">
+                        <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-yellow-400/80 via-amber-200/80 to-white/80 shadow-2xl flex items-center justify-center mb-4 border-2 border-yellow-300/40 backdrop-blur-md">
+                          <FaRegBuilding className="text-4xl text-gray-900" />
                         </div>
+                        <h4 className="font-bold text-xl mb-2 text-yellow-200">Consultation</h4>
+                        <p className="text-gray-200 text-center text-base max-w-xs">We understand your needs, style, and budget.</p>
+                        {/* Arrow */}
+                        <div className="hidden md:block absolute right-[-2.5rem] top-1/2 transform -translate-y-1/2">
+                          <span className="block w-10 h-1 bg-gradient-to-r from-yellow-300 via-amber-200 to-white rounded-full animate-pulse"></span>
+                        </div>
+                        <div className="md:hidden block mt-4">
+                          <span className="block h-10 w-1 bg-gradient-to-b from-yellow-300 via-amber-200 to-white rounded-full animate-pulse"></span>
+                        </div>
+                      </div>
+                      {/* Step 2 */}
+                      <div className="relative flex flex-col items-center flex-1">
+                        <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-yellow-400/80 via-amber-200/80 to-white/80 shadow-2xl flex items-center justify-center mb-4 border-2 border-yellow-300/40 backdrop-blur-md">
+                          <FaUsers className="text-4xl text-gray-900" />
+                        </div>
+                        <h4 className="font-bold text-xl mb-2 text-yellow-200">Design & Planning</h4>
+                        <p className="text-gray-200 text-center text-base max-w-xs">Our experts craft a personalized design and plan every detail.</p>
+                        {/* Arrow */}
+                        <div className="hidden md:block absolute right-[-2.5rem] top-1/2 transform -translate-y-1/2">
+                          <span className="block w-10 h-1 bg-gradient-to-r from-yellow-300 via-amber-200 to-white rounded-full animate-pulse"></span>
+                        </div>
+                        <div className="md:hidden block mt-4">
+                          <span className="block h-10 w-1 bg-gradient-to-b from-yellow-300 via-amber-200 to-white rounded-full animate-pulse"></span>
+                        </div>
+                      </div>
+                      {/* Step 3 */}
+                      <div className="relative flex flex-col items-center flex-1">
+                        <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-yellow-400/80 via-amber-200/80 to-white/80 shadow-2xl flex items-center justify-center mb-4 border-2 border-yellow-300/40 backdrop-blur-md">
+                          <FaRegSmile className="text-4xl text-gray-900" />
+                        </div>
+                        <h4 className="font-bold text-xl mb-2 text-yellow-200">Execution & Handover</h4>
+                        <p className="text-gray-200 text-center text-base max-w-xs">We deliver your dream space, on time and with a smile.</p>
+                      </div>
                     </div>
-                </section>
-
-                {/* WHY CHOOSE US */}
-                <section className="mb-24">
-                    <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-                        <div className="flex flex-col items-center">
-                            <FaRegLightbulb className="text-5xl text-amber-400 mb-4" />
-                            <h3 className="text-2xl font-bold mb-2">Innovative Designs</h3>
-                            <p className="text-gray-300">We bring fresh, creative ideas tailored to your lifestyle and preferences.</p>
-                        </div>
-                        <div className="flex flex-col items-center">
-                            <FaHandshake className="text-5xl text-amber-400 mb-4" />
-                            <h3 className="text-2xl font-bold mb-2">Client-Centric Approach</h3>
-                            <p className="text-gray-300">Your vision is our blueprint. We listen, collaborate, and deliver beyond expectations.</p>
-                        </div>
-                        <div className="flex flex-col items-center">
-                            <FaAward className="text-5xl text-amber-400 mb-4" />
-                            <h3 className="text-2xl font-bold mb-2">Award-Winning Quality</h3>
-                            <p className="text-gray-300">Recognized for excellence in design, execution, and customer satisfaction.</p>
-                        </div>
-                    </div>
-                </section>
-
-                {/* SIGNATURE PROJECTS - Netflix-like Hover */}
-                <section className="mb-24">
-                    <div className="max-w-5xl mx-auto">
-                        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-yellow-200 to-white">Signature Projects</h2>
-                        <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
-                            {[{src:'/image/living.jpg',title:'Modern Luxury Living',desc:'A blend of comfort and elegance for a premium Hyderabad residence.'},{src:'/image/kitchen.png',title:'Contemporary Kitchen',desc:'Sleek, functional, and beautiful—tailored for modern Indian homes.'},{src:'/image/office-interior.jpg',title:'Elegant Office Space',desc:'Boosting productivity and style for a leading Hyderabad startup.'}].map((proj,i)=>(
-                                <div key={i} className="relative rounded-2xl overflow-hidden shadow-lg group w-full md:w-80 h-64 flex-shrink-0 transition-transform duration-500 hover:scale-105 hover:z-10" style={{transition:'transform 0.4s cubic-bezier(.34,1.56,.64,1)'}}>
-                                    <Image src={proj.src} alt={proj.title} fill className="object-cover w-full h-full group-hover:brightness-110 group-hover:scale-110 transition-transform duration-500" />
-                                    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900/90 to-transparent p-4">
-                                        <h3 className="text-xl font-bold text-white mb-1">{proj.title}</h3>
-                                        <p className="text-gray-300 text-sm">{proj.desc}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* AWARDS & RECOGNITION */}
-                <section className="mb-24">
-                    <div className="max-w-5xl mx-auto text-center">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-yellow-200 to-white">Awards & Recognition</h2>
-                        <div className="flex flex-wrap justify-center gap-8 items-center">
-                            <Image src="/image/awards.png" alt="Award" width={100} height={100} className="object-contain" />
-                            <Image src="/image/awards1.png" alt="Award" width={100} height={100} className="object-contain" />
-                            <Image src="/image/amazon-pay.png" alt="Amazon Pay" width={100} height={100} className="object-contain" />
-                            <Image src="/image/intel.png" alt="Intel" width={100} height={100} className="object-contain" />
-                            <Image src="/image/nike.png" alt="Nike" width={100} height={100} className="object-contain" />
-                            <Image src="/image/oracle.png" alt="Oracle" width={100} height={100} className="object-contain" />
-                            <Image src="/image/samsung.png" alt="Samsung" width={100} height={100} className="object-contain" />
-                        </div>
-                    </div>
-                </section>
-
-                {/* HOW WE WORK - PROCESS */}
-                <section className="mb-24">
-                    <div className="max-w-6xl mx-auto">
-                        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-yellow-200 to-white">Our Process</h2>
-                        <div className="flex flex-col md:flex-row justify-center items-center gap-8">
-                            <div className="flex flex-col items-center">
-                                <FaRegBuilding className="text-4xl text-amber-400 mb-2" />
-                                <h4 className="font-bold text-lg mb-1">Consultation</h4>
-                                <p className="text-gray-300 text-center">We understand your needs, style, and budget.</p>
-                            </div>
-                            <span className="hidden md:inline-block w-12 h-1 bg-gradient-to-r from-amber-400 to-yellow-200 rounded-full" />
-                            <div className="flex flex-col items-center">
-                                <FaUsers className="text-4xl text-amber-400 mb-2" />
-                                <h4 className="font-bold text-lg mb-1">Design & Planning</h4>
-                                <p className="text-gray-300 text-center">Our experts craft a personalized design and plan every detail.</p>
-                            </div>
-                            <span className="hidden md:inline-block w-12 h-1 bg-gradient-to-r from-yellow-200 to-amber-400 rounded-full" />
-                            <div className="flex flex-col items-center">
-                                <FaRegSmile className="text-4xl text-amber-400 mb-2" />
-                                <h4 className="font-bold text-lg mb-1">Execution & Handover</h4>
-                                <p className="text-gray-300 text-center">We deliver your dream space, on time and with a smile.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* TESTIMONIALS */}
-                <section className="mb-24">
-                    <div className="max-w-5xl mx-auto text-center">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-yellow-200 to-white">What Our Clients Say</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div className="bg-gray-800/80 rounded-2xl p-8 shadow-lg border border-amber-400/20">
-                                <p className="text-lg text-gray-200 italic mb-4">“Sri Sai Interiors turned our house into a home. The attention to detail and professionalism were outstanding!”</p>
-                                <div className="flex items-center gap-4 justify-center">
-                                    <Image src="/image/profile1.jpg" alt="Client" width={48} height={48} className="rounded-full border-2 border-amber-400/40" />
-                                    <span className="font-bold">Priya S.</span>
-                                </div>
-                            </div>
-                            <div className="bg-gray-800/80 rounded-2xl p-8 shadow-lg border border-amber-400/20">
-                                <p className="text-lg text-gray-200 italic mb-4">“From design to execution, the team was with us every step. Highly recommended for anyone seeking quality interiors.”</p>
-                                <div className="flex items-center gap-4 justify-center">
-                                    <Image src="/image/profile2.jpg" alt="Client" width={48} height={48} className="rounded-full border-2 border-amber-400/40" />
-                                    <span className="font-bold">Ramesh K.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  </div>
                 </section>
 
                 {/* FINAL CALL TO ACTION - Enhanced Layout */}
@@ -249,109 +156,6 @@ export default function About() {
                                 </p>
                             </div>
                         </motion.div>
-                    </div>
-                </section>
-
-                {/* Success Showcase Section */}
-                <section className="mb-24 relative">
-                    <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 via-transparent to-gray-900/50 -z-10"></div>
-                    <div className="max-w-7xl mx-auto px-4">
-                        <div className="text-center mb-16 relative">
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6 }}
-                                className="inline-block"
-                            >
-                                <h2 className="text-5xl md:text-6xl font-noto-serif font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-amber-100 to-gray-300 mb-4 hover:scale-105 transition-transform duration-300">
-                                    Our Success Story
-                                </h2>
-                                <div className="h-1 w-24 bg-gradient-to-r from-amber-500 to-transparent mx-auto mt-4"></div>
-                            </motion.div>
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.2 }}
-                                className="mt-6 text-gray-300 font-noto-sans max-w-2xl mx-auto"
-                            >
-                                Delivering excellence in interior design with a commitment to quality and customer satisfaction
-                            </motion.p>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {/* Project Completion */}
-                            <motion.div 
-                                initial={{ opacity: 0, x: -50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                                className="group relative bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-gray-700/50 hover:border-amber-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/10"
-                            >
-                                <div className="relative w-full h-72 overflow-hidden">
-                                    <Image
-                                        src="/image/project.jpg"
-                                        alt="Project Completion"
-                                        fill
-                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-                                </div>
-                                <div className="p-8 relative z-10">
-                                    <h3 className="text-2xl font-noto-serif font-semibold text-white mb-4 group-hover:text-amber-200 transition-colors duration-300">Multiple Projects</h3>
-                                    <p className="text-gray-300 font-noto-sans leading-relaxed">Successfully completed numerous projects across Hyderabad, delivering excellence in every detail.</p>
-                                </div>
-                                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                            </motion.div>
-
-                            {/* Customer Satisfaction */}
-                            <motion.div 
-                                initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.8, delay: 0.4 }}
-                                className="group relative bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-gray-700/50 hover:border-amber-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/10"
-                            >
-                                <div className="relative w-full h-72 overflow-hidden">
-                                    <Image
-                                        src="/image/living.jpg"
-                                        alt="Customer Satisfaction"
-                                        fill
-                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-                                </div>
-                                <div className="p-8 relative z-10">
-                                    <h3 className="text-2xl font-noto-serif font-semibold text-white mb-4 group-hover:text-amber-200 transition-colors duration-300">98% Satisfaction</h3>
-                                    <p className="text-gray-300 font-noto-sans leading-relaxed">Our clients&apos; happiness is our priority, reflected in our consistently high satisfaction ratings.</p>
-                                </div>
-                                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                            </motion.div>
-
-                            {/* Awards & Recognition */}
-                            <motion.div 
-                                initial={{ opacity: 0, x: 50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.8, delay: 0.6 }}
-                                className="group relative bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-gray-700/50 hover:border-amber-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/10"
-                            >
-                                <div className="relative w-full h-72 overflow-hidden">
-                                    <Image
-                                        src="/image/awards.png"
-                                        alt="Awards & Recognition"
-                                        fill
-                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-                                </div>
-                                <div className="p-8 relative z-10">
-                                    <h3 className="text-2xl font-noto-serif font-semibold text-white mb-4 group-hover:text-amber-200 transition-colors duration-300">15+ Awards</h3>
-                                    <p className="text-gray-300 font-noto-sans leading-relaxed">Recognized for excellence in interior design and customer service by industry leaders.</p>
-                                </div>
-                                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                            </motion.div>
-                        </div>
                     </div>
                 </section>
 
