@@ -123,11 +123,11 @@ const HeroSection = () => {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.6 }}
-                            className="fixed top-20 right-12 flex flex-col items-center pointer-events-none select-none"
+                            className="fixed top-20 right-6 flex flex-col items-center pointer-events-none select-none"
                             style={{ zIndex: 50 }}
                         >
                             <span className="text-xs text-white/80 mb-1 font-semibold tracking-wide animate-pulse">Menu</span>
-                            <FaArrowDown className="text-yellow-400 text-2xl drop-shadow-lg animate-bounce rotate-90" />
+                            <FaArrowDown className="text-yellow-400 text-2xl drop-shadow-lg animate-bounce rotate-180" />
                         </motion.div>
                     )}
                 </AnimatePresence>
