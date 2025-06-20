@@ -41,27 +41,26 @@ const Header = () => {
                     : 'bg-blue-800/40 backdrop-blur-md'
             }`}>
                 <div className="container mx-auto px-4">
-                    <div className="flex items-center justify-between h-20 md:h-24 relative">
-                        {/* Logo - always left */}
-                        <Link href="/" className="flex items-center space-x-3 group z-10">
-                            <div className="relative w-14 h-14 md:w-20 md:h-20 transition-transform duration-300 group-hover:scale-105">
-                                <Image
-                                    src="/logooo.png"
-                                    alt="Sri Sai Interiors Logo"
-                                    fill
-                                    className="object-contain brightness-125 drop-shadow-md group-hover:brightness-150 group-hover:drop-shadow-[0_0_20px_rgba(255,255,0,0.4)] transition-all duration-500 bg-white/10"
-                                    priority
-                                />
-                            </div>
-                        </Link>
-
-                        {/* Center Title - always centered */}
-                        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full pointer-events-none">
-                            <div className="text-center">
-                                <h1 className="text-2xl md:text-4xl font-black text-white leading-tight drop-shadow-[0_0_6px_rgba(255,255,255,0.25)] animate-header-glow bg-gradient-to-r from-yellow-200 via-white to-yellow-300 bg-clip-text text-transparent">
+                    {/* Unified Header Row for all views */}
+                    <div className="flex items-center justify-between h-20 md:h-24 relative w-full">
+                        {/* Logo and Title Row (left-aligned on mobile, centered on desktop) */}
+                        <div className="flex items-center space-x-3">
+                            <Link href="/" className="flex items-center group">
+                                <div className="relative w-12 h-12 md:w-20 md:h-20 transition-transform duration-300 group-hover:scale-105">
+                                    <Image
+                                        src="/logooo.png"
+                                        alt="Sri Sai Interiors Logo"
+                                        fill
+                                        className="object-contain brightness-125 drop-shadow-lg group-hover:brightness-150 group-hover:drop-shadow-[0_0_24px_rgba(255,255,0,0.25)] transition-all duration-500 bg-white/10 rounded-full"
+                                        priority
+                                    />
+                                </div>
+                            </Link>
+                            <div className="flex flex-col justify-center">
+                                <span className="text-lg md:text-3xl font-black text-white leading-tight tracking-wide drop-shadow-[0_0_6px_rgba(255,255,255,0.3)] animate-header-glow bg-gradient-to-r from-yellow-200 via-white to-yellow-300 bg-clip-text text-transparent">
                                     SRI SAI INTERIORS
-                                </h1>
-                                <div className="w-20 md:w-32 h-1 bg-yellow-400 mx-auto mt-2 rounded-full shadow-[0_0_8px_rgba(251,191,36,0.18)] animate-header-line-glow"></div>
+                                </span>
+                                <span className="w-12 md:w-24 h-1 bg-yellow-400 mt-1 rounded-full shadow-[0_0_6px_rgba(251,191,36,0.2)] animate-header-line-glow"></span>
                             </div>
                         </div>
 
@@ -84,7 +83,7 @@ const Header = () => {
                         {/* Mobile Menu Button */}
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="md:hidden text-white p-2"
+                            className="md:hidden text-white p-2 ml-2"
                             aria-label="Toggle mobile menu"
                         >
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
