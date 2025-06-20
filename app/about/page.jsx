@@ -21,23 +21,22 @@ export default function About() {
             <div className="container mx-auto px-4">
                 {/* HERO SECTION - Brand Story */}
                 <section className="mb-24">
-                    <div className="relative max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10 md:gap-20">
-                        <div className="flex-1 text-center md:text-left">
-                            <h1 className="text-5xl md:text-7xl font-extrabold font-noto-serif bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-200 to-white mb-6 drop-shadow-lg">
-                                Transforming Spaces, Elevating Lifestyles
-                            </h1>
-                            <p className="text-xl md:text-2xl text-gray-200 font-noto-sans mb-8 max-w-2xl mx-auto md:mx-0">
-                                Sri Sai Interiors blends Indian tradition with modern luxury, crafting bespoke interiors that reflect your personality and aspirations. Since 2008, we have delivered award-winning designs for homes, offices, and commercial spaces across Hyderabad and beyond.
-                            </p>
-                            <a href="/consultation" className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-gray-900 font-bold text-lg shadow-lg hover:scale-105 hover:shadow-amber-300/40 transition-all duration-300">
-                                Book a Free Consultation
-                            </a>
+                    <div className="relative max-w-4xl mx-auto px-4 flex flex-col items-center justify-center">
+                        <div className="w-full md:w-4/5 bg-gray-900/70 backdrop-blur-lg rounded-3xl shadow-2xl border border-gray-700/60 p-8 md:p-14 flex flex-col items-center text-center"
+                          style={{boxShadow:'0 8px 32px 0 rgba(31,38,135,0.37)', border:'1.5px solid rgba(255,255,255,0.12)'}}>
+                          <h1 className="text-4xl md:text-6xl font-extrabold font-noto-serif bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-200 to-white mb-6 drop-shadow-lg">
+                            Transforming Spaces, Elevating Lifestyles
+                          </h1>
+                          <p className="text-lg md:text-2xl text-gray-200 font-noto-sans mb-8 max-w-2xl mx-auto">
+                            Sri Sai Interiors blends Indian tradition with modern luxury, crafting bespoke interiors that reflect your personality and aspirations. Since 2008, we have delivered award-winning designs for homes, offices, and commercial spaces across Hyderabad and beyond.
+                          </p>
+                          <a href="/consultation" className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-gray-900 font-bold text-lg shadow-lg hover:scale-105 hover:shadow-amber-300/40 transition-all duration-300">
+                            Book a Free Consultation
+                          </a>
                         </div>
-                        <div className="flex-1 flex justify-center md:justify-end">
-                            <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-amber-400/30 bg-gradient-to-br from-amber-100/10 to-gray-900/40">
-                                <Image src="/image/aboutfront.png" alt="Sri Sai Interiors Team" fill className="object-cover" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent" />
-                            </div>
+                        <div className="relative w-64 h-64 md:w-80 md:h-80 mt-8 rounded-3xl overflow-hidden shadow-2xl border-4 border-amber-400/30 bg-gradient-to-br from-amber-100/10 to-gray-900/40">
+                          <Image src="/image/aboutfront.png" alt="Sri Sai Interiors Team" fill className="object-cover" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent" />
                         </div>
                     </div>
                 </section>
@@ -63,32 +62,20 @@ export default function About() {
                     </div>
                 </section>
 
-                {/* SIGNATURE PROJECTS */}
+                {/* SIGNATURE PROJECTS - Netflix-like Hover */}
                 <section className="mb-24">
-                    <div className="max-w-7xl mx-auto">
+                    <div className="max-w-5xl mx-auto">
                         <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-yellow-200 to-white">Signature Projects</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <div className="rounded-2xl overflow-hidden shadow-lg group relative">
-                                <Image src="/image/living.jpg" alt="Luxury Living Room" width={500} height={350} className="object-cover w-full h-64 group-hover:scale-105 transition-transform duration-500" />
-                                <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900/90 to-transparent p-4">
-                                    <h3 className="text-xl font-bold text-white mb-1">Modern Luxury Living</h3>
-                                    <p className="text-gray-300 text-sm">A blend of comfort and elegance for a premium Hyderabad residence.</p>
+                        <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
+                            {[{src:'/image/living.jpg',title:'Modern Luxury Living',desc:'A blend of comfort and elegance for a premium Hyderabad residence.'},{src:'/image/kitchen.png',title:'Contemporary Kitchen',desc:'Sleek, functional, and beautiful—tailored for modern Indian homes.'},{src:'/image/office-interior.jpg',title:'Elegant Office Space',desc:'Boosting productivity and style for a leading Hyderabad startup.'}].map((proj,i)=>(
+                                <div key={i} className="relative rounded-2xl overflow-hidden shadow-lg group w-full md:w-80 h-64 flex-shrink-0 transition-transform duration-500 hover:scale-105 hover:z-10" style={{transition:'transform 0.4s cubic-bezier(.34,1.56,.64,1)'}}>
+                                    <Image src={proj.src} alt={proj.title} fill className="object-cover w-full h-full group-hover:brightness-110 group-hover:scale-110 transition-transform duration-500" />
+                                    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900/90 to-transparent p-4">
+                                        <h3 className="text-xl font-bold text-white mb-1">{proj.title}</h3>
+                                        <p className="text-gray-300 text-sm">{proj.desc}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="rounded-2xl overflow-hidden shadow-lg group relative">
-                                <Image src="/image/kitchen.png" alt="Contemporary Kitchen" width={500} height={350} className="object-cover w-full h-64 group-hover:scale-105 transition-transform duration-500" />
-                                <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900/90 to-transparent p-4">
-                                    <h3 className="text-xl font-bold text-white mb-1">Contemporary Kitchen</h3>
-                                    <p className="text-gray-300 text-sm">Sleek, functional, and beautiful—tailored for modern Indian homes.</p>
-                                </div>
-                            </div>
-                            <div className="rounded-2xl overflow-hidden shadow-lg group relative">
-                                <Image src="/image/office-interior.jpg" alt="Office Interior" width={500} height={350} className="object-cover w-full h-64 group-hover:scale-105 transition-transform duration-500" />
-                                <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900/90 to-transparent p-4">
-                                    <h3 className="text-xl font-bold text-white mb-1">Elegant Office Space</h3>
-                                    <p className="text-gray-300 text-sm">Boosting productivity and style for a leading Hyderabad startup.</p>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </section>
@@ -105,30 +92,6 @@ export default function About() {
                             <Image src="/image/nike.png" alt="Nike" width={100} height={100} className="object-contain" />
                             <Image src="/image/oracle.png" alt="Oracle" width={100} height={100} className="object-contain" />
                             <Image src="/image/samsung.png" alt="Samsung" width={100} height={100} className="object-contain" />
-                        </div>
-                    </div>
-                </section>
-
-                {/* MEET OUR TEAM */}
-                <section className="mb-24">
-                    <div className="max-w-5xl mx-auto text-center">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-yellow-200 to-white">Meet Our Leadership</h2>
-                        <div className="flex flex-wrap justify-center gap-10 items-center">
-                            <div className="flex flex-col items-center">
-                                <Image src="/image/profile1.jpg" alt="Founder" width={120} height={120} className="rounded-full border-4 border-amber-400/60 shadow-lg mb-3" />
-                                <h4 className="text-xl font-bold">Abhiram Reddy</h4>
-                                <p className="text-gray-300">Founder & Principal Designer</p>
-                            </div>
-                            <div className="flex flex-col items-center">
-                                <Image src="/image/profile2.jpg" alt="Co-Founder" width={120} height={120} className="rounded-full border-4 border-amber-400/60 shadow-lg mb-3" />
-                                <h4 className="text-xl font-bold">Sowmya Reddy</h4>
-                                <p className="text-gray-300">Co-Founder & Creative Head</p>
-                            </div>
-                            <div className="flex flex-col items-center">
-                                <Image src="/image/profile3.jpg" alt="Lead Architect" width={120} height={120} className="rounded-full border-4 border-amber-400/60 shadow-lg mb-3" />
-                                <h4 className="text-xl font-bold">Rahul Sharma</h4>
-                                <p className="text-gray-300">Lead Architect</p>
-                            </div>
                         </div>
                     </div>
                 </section>
