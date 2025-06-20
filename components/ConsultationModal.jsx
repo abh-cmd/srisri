@@ -98,13 +98,18 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gradient-to-br from-blue-900/60 via-black/70 to-blue-900/60 backdrop-blur-xl"
+                    style={{ position: 'fixed' }}
                     onClick={onClose}
                 >
+                    {/* Brand radial accent background */}
+                    <div className="pointer-events-none absolute inset-0 z-0">
+                        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[60vw] max-w-[600px] max-h-[400px] rounded-full bg-gradient-radial from-amber-300/30 via-yellow-200/10 to-transparent blur-2xl opacity-70"></div>
+                    </div>
                     <motion.div
                         initial={{ scale: 0.96, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.96, opacity: 0 }}
-                        className="relative w-full max-w-xs sm:max-w-xs md:max-w-xl bg-white/10 backdrop-blur-2xl rounded-3xl shadow-[0_8px_32px_0_rgba(31,38,135,0.25),0_1.5px_6px_0_rgba(255,255,255,0.08)] border border-white/30 ring-1 ring-amber-200/20 overflow-hidden p-1 sm:p-2 md:p-6 max-h-[80vh] overflow-y-auto"
+                        className="relative w-full max-w-xs sm:max-w-xs md:max-w-xl bg-white/10 backdrop-blur-2xl rounded-3xl shadow-[0_8px_32px_0_rgba(31,38,135,0.25),0_1.5px_6px_0_rgba(255,255,255,0.08)] border border-white/30 ring-2 ring-amber-300/30 overflow-hidden p-1 sm:p-2 md:p-6 max-h-[80vh] overflow-y-auto before:content-[''] before:absolute before:inset-0 before:rounded-3xl before:pointer-events-none before:ring-4 before:ring-amber-200/30 before:blur-[2px] before:opacity-70"
                         onClick={e => e.stopPropagation()}
                     >
                         {/* Close Button */}
@@ -166,10 +171,10 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                                             initial={{ y: -20, opacity: 0 }}
                                             animate={{ y: 0, opacity: 1 }}
                                             exit={{ y: -20, opacity: 0 }}
-                                            className={`p-3 rounded-2xl shadow-xl text-center mb-2 border-2 ${
+                                            className={`p-3 rounded-2xl text-center mb-2 border-2 shadow-lg ${
                                                 notification.type === 'success' 
-                                                    ? 'bg-white/30 text-green-700 border-green-300/40 backdrop-blur-md' 
-                                                    : 'bg-white/30 text-red-700 border-red-300/40 backdrop-blur-md'
+                                                    ? 'bg-white/30 text-green-700 border-green-300/40 backdrop-blur-md shadow-green-200/40' 
+                                                    : 'bg-white/30 text-red-700 border-red-300/40 backdrop-blur-md shadow-red-200/40'
                                             }`}
                                         >
                                             {notification.message}
@@ -184,7 +189,7 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                                             value={formData.name}
                                             onChange={handleChange}
                                             placeholder="Your Name"
-                                            className="w-full px-4 py-3 bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-amber-400/70 focus:ring-2 focus:ring-amber-200/40 shadow-[inset_0_1.5px_6px_0_rgba(255,255,255,0.18)] transition-all duration-300 font-medium"
+                                            className="w-full px-4 py-3 bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-amber-400/80 focus:ring-2 focus:ring-amber-300/40 focus:shadow-[0_0_0_4px_rgba(251,191,36,0.12)] shadow-[inset_0_1.5px_6px_0_rgba(255,255,255,0.18)] transition-all duration-300 font-medium"
                                         />
                                         {errors.name && <p className="mt-1 text-red-400 text-sm">{errors.name}</p>}
                                     </div>
@@ -196,7 +201,7 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                                             value={formData.mobile}
                                             onChange={handleChange}
                                             placeholder="Mobile Number"
-                                            className="w-full px-4 py-3 bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-amber-400/70 focus:ring-2 focus:ring-amber-200/40 shadow-[inset_0_1.5px_6px_0_rgba(255,255,255,0.18)] transition-all duration-300 font-medium"
+                                            className="w-full px-4 py-3 bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-amber-400/80 focus:ring-2 focus:ring-amber-300/40 focus:shadow-[0_0_0_4px_rgba(251,191,36,0.12)] shadow-[inset_0_1.5px_6px_0_rgba(255,255,255,0.18)] transition-all duration-300 font-medium"
                                         />
                                         {errors.mobile && <p className="mt-1 text-red-400 text-sm">{errors.mobile}</p>}
                                     </div>
@@ -208,7 +213,7 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                                             value={formData.email}
                                             onChange={handleChange}
                                             placeholder="Email Address"
-                                            className="w-full px-4 py-3 bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-amber-400/70 focus:ring-2 focus:ring-amber-200/40 shadow-[inset_0_1.5px_6px_0_rgba(255,255,255,0.18)] transition-all duration-300 font-medium"
+                                            className="w-full px-4 py-3 bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-amber-400/80 focus:ring-2 focus:ring-amber-300/40 focus:shadow-[0_0_0_4px_rgba(251,191,36,0.12)] shadow-[inset_0_1.5px_6px_0_rgba(255,255,255,0.18)] transition-all duration-300 font-medium"
                                         />
                                         {errors.email && <p className="mt-1 text-red-400 text-sm">{errors.email}</p>}
                                     </div>
@@ -220,7 +225,7 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                                             value={formData.homeType}
                                             onChange={handleChange}
                                             placeholder="Home Type (Optional)"
-                                            className="w-full px-4 py-3 bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-amber-400/70 focus:ring-2 focus:ring-amber-200/40 shadow-[inset_0_1.5px_6px_0_rgba(255,255,255,0.18)] transition-all duration-300 font-medium"
+                                            className="w-full px-4 py-3 bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-amber-400/80 focus:ring-2 focus:ring-amber-300/40 focus:shadow-[0_0_0_4px_rgba(251,191,36,0.12)] shadow-[inset_0_1.5px_6px_0_rgba(255,255,255,0.18)] transition-all duration-300 font-medium"
                                         />
                                     </div>
 
@@ -231,7 +236,7 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                                             value={formData.location}
                                             onChange={handleChange}
                                             placeholder="Location"
-                                            className="w-full px-4 py-3 bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-amber-400/70 focus:ring-2 focus:ring-amber-200/40 shadow-[inset_0_1.5px_6px_0_rgba(255,255,255,0.18)] transition-all duration-300 font-medium"
+                                            className="w-full px-4 py-3 bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-amber-400/80 focus:ring-2 focus:ring-amber-300/40 focus:shadow-[0_0_0_4px_rgba(251,191,36,0.12)] shadow-[inset_0_1.5px_6px_0_rgba(255,255,255,0.18)] transition-all duration-300 font-medium"
                                         />
                                         {errors.location && <p className="mt-1 text-red-400 text-sm">{errors.location}</p>}
                                     </div>
@@ -239,7 +244,7 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                                     <button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="w-full py-3 bg-gradient-to-r from-amber-300 via-yellow-200 to-orange-300 text-black font-bold rounded-full shadow-[0_2px_12px_0_rgba(251,191,36,0.18)] hover:from-yellow-300 hover:to-amber-300 hover:shadow-amber-200/40 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-200/40 disabled:opacity-60 disabled:cursor-not-allowed relative overflow-hidden"
+                                        className="w-full py-3 bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-400 text-black font-bold rounded-full shadow-[0_2px_16px_0_rgba(251,191,36,0.22)] hover:from-yellow-400 hover:to-amber-400 hover:shadow-amber-200/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-300/40 focus:shadow-[0_0_0_4px_rgba(251,191,36,0.18)] disabled:opacity-60 disabled:cursor-not-allowed relative overflow-hidden"
                                     >
                                         {isSubmitting ? (
                                             <span className="flex items-center justify-center gap-2">
