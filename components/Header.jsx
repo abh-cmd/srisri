@@ -66,16 +66,16 @@ const Header = () => {
 
                         {/* Desktop Navigation */}
                         <nav className="hidden md:flex items-center space-x-8">
-                            <Link href="/" className="text-white hover:text-yellow-400 transition-colors duration-300 font-medium text-lg">
+                            <Link href="/" className={`text-white hover:text-yellow-400 transition-all duration-300 font-semibold text-xl px-2 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400/60 active:scale-95 active:shadow-[0_0_10px_2px_rgba(251,191,36,0.25)]`}>
                                 Home
                             </Link>
-                            <Link href="/about" className="text-white hover:text-yellow-400 transition-colors duration-300 font-medium text-lg">
+                            <Link href="/about" className={`text-white hover:text-yellow-400 transition-all duration-300 font-semibold text-xl px-2 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400/60 active:scale-95 active:shadow-[0_0_10px_2px_rgba(251,191,36,0.25)]`}>
                                 About
                             </Link>
-                            <Link href="/projects" className="text-white hover:text-yellow-400 transition-colors duration-300 font-medium text-lg">
+                            <Link href="/projects" className={`text-white hover:text-yellow-400 transition-all duration-300 font-semibold text-xl px-2 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400/60 active:scale-95 active:shadow-[0_0_10px_2px_rgba(251,191,36,0.25)]`}>
                                 Projects
                             </Link>
-                            <Link href="/gallery" className="text-white hover:text-yellow-400 transition-colors duration-300 font-medium text-lg">
+                            <Link href="/gallery" className={`text-white hover:text-yellow-400 transition-all duration-300 font-semibold text-xl px-2 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400/60 active:scale-95 active:shadow-[0_0_10px_2px_rgba(251,191,36,0.25)]`}>
                                 Gallery
                             </Link>
                         </nav>

@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { MdPhone, MdEmail, MdLocationOn } from 'react-icons/md';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { FaAward, FaUsers, FaRegLightbulb, FaHandshake, FaRegBuilding, FaRegSmile } from 'react-icons/fa';
 
 export default function About() {
     useEffect(() => {
@@ -18,6 +19,180 @@ export default function About() {
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-900/95 to-gray-800/95 text-gray-100 py-16 pt-52">
             <div className="container mx-auto px-4">
+                {/* HERO SECTION - Brand Story */}
+                <section className="mb-24">
+                    <div className="relative max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10 md:gap-20">
+                        <div className="flex-1 text-center md:text-left">
+                            <h1 className="text-5xl md:text-7xl font-extrabold font-noto-serif bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-200 to-white mb-6 drop-shadow-lg">
+                                Transforming Spaces, Elevating Lifestyles
+                            </h1>
+                            <p className="text-xl md:text-2xl text-gray-200 font-noto-sans mb-8 max-w-2xl mx-auto md:mx-0">
+                                Sri Sai Interiors blends Indian tradition with modern luxury, crafting bespoke interiors that reflect your personality and aspirations. Since 2008, we have delivered award-winning designs for homes, offices, and commercial spaces across Hyderabad and beyond.
+                            </p>
+                            <a href="/consultation" className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-gray-900 font-bold text-lg shadow-lg hover:scale-105 hover:shadow-amber-300/40 transition-all duration-300">
+                                Book a Free Consultation
+                            </a>
+                        </div>
+                        <div className="flex-1 flex justify-center md:justify-end">
+                            <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-amber-400/30 bg-gradient-to-br from-amber-100/10 to-gray-900/40">
+                                <Image src="/image/aboutfront.png" alt="Sri Sai Interiors Team" fill className="object-cover" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* WHY CHOOSE US */}
+                <section className="mb-24">
+                    <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+                        <div className="flex flex-col items-center">
+                            <FaRegLightbulb className="text-5xl text-amber-400 mb-4" />
+                            <h3 className="text-2xl font-bold mb-2">Innovative Designs</h3>
+                            <p className="text-gray-300">We bring fresh, creative ideas tailored to your lifestyle and preferences.</p>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <FaHandshake className="text-5xl text-amber-400 mb-4" />
+                            <h3 className="text-2xl font-bold mb-2">Client-Centric Approach</h3>
+                            <p className="text-gray-300">Your vision is our blueprint. We listen, collaborate, and deliver beyond expectations.</p>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <FaAward className="text-5xl text-amber-400 mb-4" />
+                            <h3 className="text-2xl font-bold mb-2">Award-Winning Quality</h3>
+                            <p className="text-gray-300">Recognized for excellence in design, execution, and customer satisfaction.</p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* SIGNATURE PROJECTS */}
+                <section className="mb-24">
+                    <div className="max-w-7xl mx-auto">
+                        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-yellow-200 to-white">Signature Projects</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div className="rounded-2xl overflow-hidden shadow-lg group relative">
+                                <Image src="/image/living.jpg" alt="Luxury Living Room" width={500} height={350} className="object-cover w-full h-64 group-hover:scale-105 transition-transform duration-500" />
+                                <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900/90 to-transparent p-4">
+                                    <h3 className="text-xl font-bold text-white mb-1">Modern Luxury Living</h3>
+                                    <p className="text-gray-300 text-sm">A blend of comfort and elegance for a premium Hyderabad residence.</p>
+                                </div>
+                            </div>
+                            <div className="rounded-2xl overflow-hidden shadow-lg group relative">
+                                <Image src="/image/kitchen.png" alt="Contemporary Kitchen" width={500} height={350} className="object-cover w-full h-64 group-hover:scale-105 transition-transform duration-500" />
+                                <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900/90 to-transparent p-4">
+                                    <h3 className="text-xl font-bold text-white mb-1">Contemporary Kitchen</h3>
+                                    <p className="text-gray-300 text-sm">Sleek, functional, and beautiful—tailored for modern Indian homes.</p>
+                                </div>
+                            </div>
+                            <div className="rounded-2xl overflow-hidden shadow-lg group relative">
+                                <Image src="/image/office-interior.jpg" alt="Office Interior" width={500} height={350} className="object-cover w-full h-64 group-hover:scale-105 transition-transform duration-500" />
+                                <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900/90 to-transparent p-4">
+                                    <h3 className="text-xl font-bold text-white mb-1">Elegant Office Space</h3>
+                                    <p className="text-gray-300 text-sm">Boosting productivity and style for a leading Hyderabad startup.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* AWARDS & RECOGNITION */}
+                <section className="mb-24">
+                    <div className="max-w-5xl mx-auto text-center">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-yellow-200 to-white">Awards & Recognition</h2>
+                        <div className="flex flex-wrap justify-center gap-8 items-center">
+                            <Image src="/image/awards.png" alt="Award" width={100} height={100} className="object-contain" />
+                            <Image src="/image/awards1.png" alt="Award" width={100} height={100} className="object-contain" />
+                            <Image src="/image/amazon-pay.png" alt="Amazon Pay" width={100} height={100} className="object-contain" />
+                            <Image src="/image/intel.png" alt="Intel" width={100} height={100} className="object-contain" />
+                            <Image src="/image/nike.png" alt="Nike" width={100} height={100} className="object-contain" />
+                            <Image src="/image/oracle.png" alt="Oracle" width={100} height={100} className="object-contain" />
+                            <Image src="/image/samsung.png" alt="Samsung" width={100} height={100} className="object-contain" />
+                        </div>
+                    </div>
+                </section>
+
+                {/* MEET OUR TEAM */}
+                <section className="mb-24">
+                    <div className="max-w-5xl mx-auto text-center">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-yellow-200 to-white">Meet Our Leadership</h2>
+                        <div className="flex flex-wrap justify-center gap-10 items-center">
+                            <div className="flex flex-col items-center">
+                                <Image src="/image/profile1.jpg" alt="Founder" width={120} height={120} className="rounded-full border-4 border-amber-400/60 shadow-lg mb-3" />
+                                <h4 className="text-xl font-bold">Abhiram Reddy</h4>
+                                <p className="text-gray-300">Founder & Principal Designer</p>
+                            </div>
+                            <div className="flex flex-col items-center">
+                                <Image src="/image/profile2.jpg" alt="Co-Founder" width={120} height={120} className="rounded-full border-4 border-amber-400/60 shadow-lg mb-3" />
+                                <h4 className="text-xl font-bold">Sowmya Reddy</h4>
+                                <p className="text-gray-300">Co-Founder & Creative Head</p>
+                            </div>
+                            <div className="flex flex-col items-center">
+                                <Image src="/image/profile3.jpg" alt="Lead Architect" width={120} height={120} className="rounded-full border-4 border-amber-400/60 shadow-lg mb-3" />
+                                <h4 className="text-xl font-bold">Rahul Sharma</h4>
+                                <p className="text-gray-300">Lead Architect</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* HOW WE WORK - PROCESS */}
+                <section className="mb-24">
+                    <div className="max-w-6xl mx-auto">
+                        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-yellow-200 to-white">Our Process</h2>
+                        <div className="flex flex-col md:flex-row justify-center items-center gap-8">
+                            <div className="flex flex-col items-center">
+                                <FaRegBuilding className="text-4xl text-amber-400 mb-2" />
+                                <h4 className="font-bold text-lg mb-1">Consultation</h4>
+                                <p className="text-gray-300 text-center">We understand your needs, style, and budget.</p>
+                            </div>
+                            <span className="hidden md:inline-block w-12 h-1 bg-gradient-to-r from-amber-400 to-yellow-200 rounded-full" />
+                            <div className="flex flex-col items-center">
+                                <FaUsers className="text-4xl text-amber-400 mb-2" />
+                                <h4 className="font-bold text-lg mb-1">Design & Planning</h4>
+                                <p className="text-gray-300 text-center">Our experts craft a personalized design and plan every detail.</p>
+                            </div>
+                            <span className="hidden md:inline-block w-12 h-1 bg-gradient-to-r from-yellow-200 to-amber-400 rounded-full" />
+                            <div className="flex flex-col items-center">
+                                <FaRegSmile className="text-4xl text-amber-400 mb-2" />
+                                <h4 className="font-bold text-lg mb-1">Execution & Handover</h4>
+                                <p className="text-gray-300 text-center">We deliver your dream space, on time and with a smile.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* TESTIMONIALS */}
+                <section className="mb-24">
+                    <div className="max-w-5xl mx-auto text-center">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-yellow-200 to-white">What Our Clients Say</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="bg-gray-800/80 rounded-2xl p-8 shadow-lg border border-amber-400/20">
+                                <p className="text-lg text-gray-200 italic mb-4">“Sri Sai Interiors turned our house into a home. The attention to detail and professionalism were outstanding!”</p>
+                                <div className="flex items-center gap-4 justify-center">
+                                    <Image src="/image/profile1.jpg" alt="Client" width={48} height={48} className="rounded-full border-2 border-amber-400/40" />
+                                    <span className="font-bold">Priya S.</span>
+                                </div>
+                            </div>
+                            <div className="bg-gray-800/80 rounded-2xl p-8 shadow-lg border border-amber-400/20">
+                                <p className="text-lg text-gray-200 italic mb-4">“From design to execution, the team was with us every step. Highly recommended for anyone seeking quality interiors.”</p>
+                                <div className="flex items-center gap-4 justify-center">
+                                    <Image src="/image/profile2.jpg" alt="Client" width={48} height={48} className="rounded-full border-2 border-amber-400/40" />
+                                    <span className="font-bold">Ramesh K.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* FINAL CALL TO ACTION */}
+                <section className="mb-12">
+                    <div className="max-w-3xl mx-auto text-center bg-gradient-to-r from-amber-500/20 via-gray-900/80 to-yellow-400/10 rounded-2xl p-10 shadow-2xl border border-amber-400/30">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Ready to Transform Your Space?</h2>
+                        <p className="text-lg text-gray-200 mb-6">Let's create something extraordinary together. Book a free consultation with our experts today.</p>
+                        <a href="/consultation" className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-gray-900 font-bold text-lg shadow-lg hover:scale-105 hover:shadow-amber-300/40 transition-all duration-300">
+                            Book Consultation
+                        </a>
+                    </div>
+                </section>
+
                 {/* About Section */}
                 <section className="mb-24">
                     <div className="max-w-7xl mx-auto px-4">
