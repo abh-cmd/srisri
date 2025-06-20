@@ -41,25 +41,9 @@ const Header = () => {
                     : 'bg-blue-800/40 backdrop-blur-md'
             }`}>
                 <div className="container mx-auto px-4">
-                    {/* Mobile Header Enhanced */}
-                    <div className="md:hidden flex items-center justify-center gap-3 py-3 px-2 bg-gradient-to-r from-blue-900/80 to-blue-800/80 shadow-lg rounded-b-2xl backdrop-blur-md">
-                        <div className="relative w-10 h-10 flex-shrink-0">
-                            <Image
-                                src="/logooo.png"
-                                alt="Sri Sai Interiors Logo"
-                                fill
-                                className="object-contain brightness-150 drop-shadow-md"
-                                priority
-                            />
-                        </div>
-                        <div className="flex flex-col items-start justify-center">
-                            <span className="text-lg font-black text-white leading-tight tracking-wide drop-shadow-[0_0_6px_rgba(255,255,255,0.3)]">SRI SAI INTERIORS</span>
-                            <span className="w-12 h-1 bg-yellow-400 mt-1 rounded-full shadow-[0_0_6px_rgba(251,191,36,0.2)]"></span>
-                        </div>
-                    </div>
-                    <div className="flex items-center justify-between h-20 md:h-24">
-                        {/* Logo - smaller and vertically centered */}
-                        <Link href="/" className="flex items-center space-x-3 group">
+                    <div className="flex items-center justify-between h-20 md:h-24 relative">
+                        {/* Logo - always left */}
+                        <Link href="/" className="flex items-center space-x-3 group z-10">
                             <div className="relative w-14 h-14 md:w-20 md:h-20 transition-transform duration-300 group-hover:scale-105">
                                 <Image
                                     src="/logooo.png"
@@ -70,6 +54,16 @@ const Header = () => {
                                 />
                             </div>
                         </Link>
+
+                        {/* Center Title - always centered */}
+                        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full pointer-events-none">
+                            <div className="text-center">
+                                <h1 className="text-2xl md:text-4xl font-black text-white leading-tight drop-shadow-[0_0_6px_rgba(255,255,255,0.25)] animate-header-glow bg-gradient-to-r from-yellow-200 via-white to-yellow-300 bg-clip-text text-transparent">
+                                    SRI SAI INTERIORS
+                                </h1>
+                                <div className="w-20 md:w-32 h-1 bg-yellow-400 mx-auto mt-2 rounded-full shadow-[0_0_8px_rgba(251,191,36,0.18)] animate-header-line-glow"></div>
+                            </div>
+                        </div>
 
                         {/* Desktop Navigation */}
                         <nav className="hidden md:flex items-center space-x-8">
@@ -86,16 +80,6 @@ const Header = () => {
                                 Gallery
                             </Link>
                         </nav>
-
-                        {/* Center Title - Desktop */}
-                        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2">
-                            <div className="text-center">
-                                <h1 className="text-3xl md:text-4xl font-black text-white leading-tight drop-shadow-[0_0_6px_rgba(255,255,255,0.25)] animate-header-glow bg-gradient-to-r from-yellow-200 via-white to-yellow-300 bg-clip-text text-transparent">
-                                    SRI SAI INTERIORS
-                                </h1>
-                                <div className="w-24 md:w-32 h-1 bg-yellow-400 mx-auto mt-2 rounded-full shadow-[0_0_8px_rgba(251,191,36,0.18)] animate-header-line-glow"></div>
-                            </div>
-                        </div>
 
                         {/* Mobile Menu Button */}
                         <button
