@@ -19,22 +19,10 @@ export default function About() {
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-900/95 to-gray-800/95 text-gray-100 py-16 pt-52">
             <div className="container mx-auto px-4">
-                {/* HERO SECTION - Brand Story + Netflix Images */}
+                {/* HERO SECTION - Text Right, Images Left */}
                 <section className="mb-24">
                     <div className="relative max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center md:items-stretch gap-10 md:gap-20">
-                        {/* Left: Glassy Text Box */}
-                        <div className="flex-1 flex flex-col justify-center">
-                            <div className="bg-gradient-to-br from-gray-900/90 via-gray-800/80 to-gray-900/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-gray-700/60 p-8 md:p-14 text-left md:text-left"
-                                style={{boxShadow:'0 8px 32px 0 rgba(31,38,135,0.37)', border:'1.5px solid rgba(255,255,255,0.10)'}}>
-                                <h1 className="text-4xl md:text-6xl font-extrabold font-noto-serif bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-200 to-white mb-8 drop-shadow-lg">
-                                    Transforming Spaces, Elevating Lifestyles
-                                </h1>
-                                <a href="/consultation" className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-gray-900 font-bold text-lg shadow-lg hover:scale-105 hover:shadow-amber-300/40 transition-all duration-300">
-                                    Book a Free Consultation
-                                </a>
-                            </div>
-                        </div>
-                        {/* Right: Netflix-style Images */}
+                        {/* Left: Netflix-style Images */}
                         <div className="flex-1 flex flex-col justify-center">
                             <div className="flex flex-row md:flex-col gap-6 md:gap-8 items-center justify-center h-full">
                                 {["/image/living.jpg","/image/kitchen.png","/image/office-interior.jpg"].map((src,i)=>(
@@ -43,6 +31,15 @@ export default function About() {
                                         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
                                     </div>
                                 ))}
+                            </div>
+                        </div>
+                        {/* Right: Glassy Text Box */}
+                        <div className="flex-1 flex flex-col justify-center">
+                            <div className="bg-gradient-to-br from-gray-900/90 via-gray-800/80 to-gray-900/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-gray-700/60 p-8 md:p-14 text-right md:text-right flex flex-col items-end"
+                                style={{boxShadow:'0 8px 32px 0 rgba(31,38,135,0.37)', border:'1.5px solid rgba(255,255,255,0.10)'}}>
+                                <h1 className="text-4xl md:text-6xl font-extrabold font-noto-serif bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-200 to-white mb-8 drop-shadow-lg">
+                                    Transforming Spaces, Elevating Lifestyles
+                                </h1>
                             </div>
                         </div>
                     </div>
@@ -189,14 +186,10 @@ export default function About() {
                     </div>
                 </section>
 
-                {/* FINAL CALL TO ACTION */}
+                {/* FINAL CALL TO ACTION - Enhanced Layout */}
                 <section className="mb-12">
-                    <div className="max-w-3xl mx-auto text-center bg-gradient-to-r from-amber-500/20 via-gray-900/80 to-yellow-400/10 rounded-2xl p-10 shadow-2xl border border-amber-400/30">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Ready to Transform Your Space?</h2>
-                        <p className="text-lg text-gray-200 mb-6">Let's create something extraordinary together. Book a free consultation with our experts today.</p>
-                        <a href="/consultation" className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-gray-900 font-bold text-lg shadow-lg hover:scale-105 hover:shadow-amber-300/40 transition-all duration-300">
-                            Book Consultation
-                        </a>
+                    <div className="max-w-5xl mx-auto text-center bg-gradient-to-br from-gray-900/90 via-gray-800/80 to-gray-900/80 rounded-2xl p-16 shadow-2xl border border-amber-400/20 flex flex-col items-center justify-center min-h-[300px]">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-200 to-white drop-shadow-lg">Ready to Transform Your Space?</h2>
                     </div>
                 </section>
 
@@ -429,93 +422,6 @@ export default function About() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Customer Reviews Section */}
-                <section className="mb-24">
-                    <div className="max-w-7xl mx-auto px-4">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                            className="text-center mb-16 relative"
-                        >
-                            <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 via-transparent to-gray-900/50 -z-10"></div>
-                            <h2 className="text-5xl md:text-6xl font-noto-serif font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-amber-100 to-gray-300 mb-4 hover:scale-105 transition-transform duration-300">
-                                Client Testimonials
-                            </h2>
-                            <p className="text-gray-300 font-noto-sans text-xl mb-6">What our clients say about us</p>
-                            <div className="h-1 w-32 bg-gradient-to-r from-amber-500 to-transparent mx-auto transform hover:scale-x-110 transition-transform duration-300"></div>
-                        </motion.div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            {/* Vijay's Review */}
-                            <motion.div 
-                                initial={{ opacity: 0, x: -50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                                className="bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-700/50 hover:border-amber-500/30 transition-all duration-500"
-                            >
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className="w-16 h-16 rounded-full bg-amber-500/20 flex items-center justify-center">
-                                        <span className="text-2xl font-noto-serif text-amber-200">V</span>
-                                    </div>
-                                    <div>
-                                        <h3 className="text-xl font-noto-serif font-semibold text-white">Vijay</h3>
-                                        <p className="text-amber-200/80 text-sm font-noto-sans">Residential Project Client</p>
-                                    </div>
-                                </div>
-                                <div className="relative">
-                                    <div className="absolute -top-4 -left-4 text-6xl text-amber-500/20 font-noto-serif">&ldquo;</div>
-                                    <p className="text-gray-300 font-noto-sans leading-relaxed relative z-10">
-                                        Sri Sai Interiors transformed our home into a masterpiece. Their attention to detail and commitment to quality is unmatched. The team&apos;s professionalism and creative solutions made the entire process smooth and enjoyable.
-                                    </p>
-                                    <div className="absolute -bottom-4 -right-4 text-6xl text-amber-500/20 font-noto-serif rotate-180">&rdquo;</div>
-                                </div>
-                                <div className="mt-6 flex items-center gap-1">
-                                    {[...Array(5)].map((_, i) => (
-                                        <svg key={i} className="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                        </svg>
-                                    ))}
-                                </div>
-                            </motion.div>
-
-                            {/* Giridhar's Review */}
-                            <motion.div 
-                                initial={{ opacity: 0, x: 50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.8, delay: 0.4 }}
-                                className="bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-700/50 hover:border-amber-500/30 transition-all duration-500"
-                            >
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className="w-16 h-16 rounded-full bg-amber-500/20 flex items-center justify-center">
-                                        <span className="text-2xl font-noto-serif text-amber-200">G</span>
-                                    </div>
-                                    <div>
-                                        <h3 className="text-xl font-noto-serif font-semibold text-white">Giridhar</h3>
-                                        <p className="text-amber-200/80 text-sm font-noto-sans">Commercial Space Owner</p>
-                                    </div>
-                                </div>
-                                <div className="relative">
-                                    <div className="absolute -top-4 -left-4 text-6xl text-amber-500/20 font-noto-serif">&ldquo;</div>
-                                    <p className="text-gray-300 font-noto-sans leading-relaxed relative z-10">
-                                        Working with Sri Sai Interiors was a game-changer for our business space. Their innovative designs and efficient execution exceeded our expectations. The team&apos;s expertise in commercial interiors is truly remarkable.
-                                    </p>
-                                    <div className="absolute -bottom-4 -right-4 text-6xl text-amber-500/20 font-noto-serif rotate-180">&rdquo;</div>
-                                </div>
-                                <div className="mt-6 flex items-center gap-1">
-                                    {[...Array(5)].map((_, i) => (
-                                        <svg key={i} className="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                        </svg>
-                                    ))}
-                                </div>
-                            </motion.div>
                         </div>
                     </div>
                 </section>
