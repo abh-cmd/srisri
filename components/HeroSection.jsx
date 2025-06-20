@@ -1,13 +1,24 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PhonePopup from './PhonePopup';
 import ConsultationModal from './ConsultationModal';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaArrowDown } from 'react-icons/fa';
 
 const HeroSection = () => {
     const [showPhonePopup, setShowPhonePopup] = useState(false);
     const [showConsultationModal, setShowConsultationModal] = useState(false);
+    const [showArrow, setShowArrow] = useState(true);
+
+    // Animation for arrow: toggle every 2 seconds
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const interval = setInterval(() => {
+            setShowArrow((prev) => !prev);
+        }, 2000);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <section className="relative h-screen overflow-hidden">
@@ -104,6 +115,22 @@ const HeroSection = () => {
                         </div>
                     </motion.div>
                 </div>
+                {/* Animated Explore More Arrow - Mobile Only */}
+                <AnimatePresence>
+                    {showArrow && (
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 10 }}
+                            transition={{ duration: 0.6 }}
+                            className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center"
+                            style={{ zIndex: 20 }}
+                        >
+                            <span className="text-xs text-white/80 mb-1 font-semibold tracking-wide animate-pulse">Explore more</span>
+                            <FaArrowDown className="text-yellow-400 text-3xl drop-shadow-lg animate-bounce" />
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
 
             {/* Phone Popup */}
