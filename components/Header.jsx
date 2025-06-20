@@ -41,12 +41,21 @@ const Header = () => {
                     : 'bg-blue-800/40 backdrop-blur-md'
             }`}>
                 <div className="container mx-auto px-4">
-                    {/* Mobile Title */}
-                    <div className="block md:hidden text-center pt-3 pb-1">
-                        <h1 className="text-xl font-black text-white leading-tight drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">
-                            SRI SAI INTERIORS
-                        </h1>
-                        <div className="w-16 h-1 bg-yellow-400 mx-auto mt-1 rounded-full shadow-[0_0_10px_rgba(251,191,36,0.3)]"></div>
+                    {/* Mobile Header Enhanced */}
+                    <div className="md:hidden flex items-center justify-center gap-3 py-3 px-2 bg-gradient-to-r from-blue-900/80 to-blue-800/80 shadow-lg rounded-b-2xl backdrop-blur-md">
+                        <div className="relative w-10 h-10 flex-shrink-0">
+                            <Image
+                                src="/logooo.png"
+                                alt="Sri Sai Interiors Logo"
+                                fill
+                                className="object-contain brightness-150 drop-shadow-md"
+                                priority
+                            />
+                        </div>
+                        <div className="flex flex-col items-start justify-center">
+                            <span className="text-lg font-black text-white leading-tight tracking-wide drop-shadow-[0_0_6px_rgba(255,255,255,0.3)]">SRI SAI INTERIORS</span>
+                            <span className="w-12 h-1 bg-yellow-400 mt-1 rounded-full shadow-[0_0_6px_rgba(251,191,36,0.2)]"></span>
+                        </div>
                     </div>
                     <div className="flex items-center justify-between h-24 md:h-28">
                         {/* Logo */}

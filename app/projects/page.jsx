@@ -110,7 +110,7 @@ export default function Projects() {
             // Update hover state
             setProjects(prevProjects => 
                 prevProjects.map(project =>
-                    project.id === id ? { ...project, isHovered: false } : project
+            project.id === id ? { ...project, isHovered: false } : project
                 )
             );
         } catch (error) {
@@ -185,58 +185,52 @@ export default function Projects() {
                             className="flex overflow-x-auto gap-4 md:gap-8 pb-8 scrollbar-hide snap-x snap-mandatory h-full items-center"
                             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                         >
-                            {projects.map((project) => (
-                                <motion.div
-                                    key={project.id}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5 }}
-                                    className="flex-none w-[85vw] md:w-[90vw] max-w-[1400px] snap-start"
+                        {projects.map((project) => (
+                            <motion.div
+                                key={project.id}
+                                initial={{ opacity: 0, y: 40 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.7, ease: [0.25, 0.8, 0.25, 1] }}
+                                className="flex-none w-[90vw] md:w-[40vw] max-w-[400px] snap-start"
+                            >
+                                <div
+                                    className="relative overflow-hidden rounded-2xl group cursor-pointer aspect-[4/5] md:aspect-[21/9] shadow-xl hover:shadow-2xl transition-all duration-500"
+                                    onMouseEnter={() => handleMouseEnter(project.id)}
+                                    onMouseLeave={() => handleMouseLeave(project.id)}
+                                    onTouchStart={() => handleMouseEnter(project.id)}
+                                    onTouchEnd={() => handleMouseLeave(project.id)}
                                 >
-                                    <div 
-                                        className="relative overflow-hidden rounded-xl md:rounded-2xl group cursor-pointer aspect-[16/9] md:aspect-[21/9] shadow-xl hover:shadow-2xl transition-all duration-500"
-                                        onMouseEnter={() => handleMouseEnter(project.id)}
-                                        onMouseLeave={() => handleMouseLeave(project.id)}
-                                    >
-                                        {project.isHovered ? (
-                                            <video
-                                                ref={el => videoRefs.current[project.id] = el}
-                                                className="w-full h-full object-cover"
-                                                loop
-                                                muted
-                                                playsInline
-                                                preload="auto"
-                                                src={project.video}
-                                                onLoadedData={() => {
-                                                    if (videoRefs.current[project.id]) {
-                                                        videoRefs.current[project.id].play().catch(console.error);
-                                                    }
-                                                }}
-                                            >
-                                                Your browser does not support the video tag.
-                                            </video>
-                                        ) : (
-                                            <Image
-                                                src={project.image}
-                                                alt={project.name}
-                                                fill
-                                                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                                priority={project.id === 1}
-                                            />
-                                        )}
-                                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                                        <div className="absolute inset-x-0 bottom-0 p-6 md:p-12 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                                            <h2 className="text-2xl md:text-5xl font-noto-serif font-bold text-white mb-2 md:mb-4 transform transition-all duration-500 group-hover:text-white [text-shadow:_0_0_30px_rgba(255,255,255,0.3)] group-hover:[text-shadow:_0_0_30px_rgba(255,255,255,0.5)]">
-                                                {project.name}
-                                            </h2>
-                                            <p className="text-base md:text-2xl font-noto-sans text-gray-200 opacity-0 group-hover:opacity-100 transition-all duration-500 max-w-3xl transform translate-y-4 group-hover:translate-y-0 group-hover:text-white">
-                                                {project.description}
-                                            </p>
-                                        </div>
+                                    {/* Video or Image */}
+                                    {project.isHovered ? (
+                                        <video
+                                            ref={el => videoRefs.current[project.id] = el}
+                                            src={project.video}
+                                            className="absolute inset-0 w-full h-full object-cover z-0"
+                                            autoPlay
+                                            muted
+                                            playsInline
+                                            loop
+                                            style={{ transition: 'opacity 0.5s' }}
+                                        />
+                                    ) : (
+                                        <Image
+                                            src={project.image}
+                                            alt={project.name}
+                                            fill
+                                            className="object-cover z-0"
+                                            priority
+                                        />
+                                    )}
+                                    {/* Tint Box for Text */}
+                                    <div className="absolute bottom-0 left-0 right-0 bg-black/40 backdrop-blur-sm p-4 rounded-b-2xl z-10">
+                                        <h2 className="text-lg font-bold text-white mb-2 drop-shadow-md">{project.name}</h2>
+                                        <p className="text-xs text-gray-200 drop-shadow-sm">{project.description}</p>
                                     </div>
-                                </motion.div>
-                            ))}
+                                    {/* Overlay for smooth hover/tap effect */}
+                                    <div className="absolute inset-0 z-20 transition-all duration-300 group-hover:bg-black/10 group-active:bg-black/20 pointer-events-none" />
+                                </div>
+                            </motion.div>
+                        ))}
                         </div>
                     </div>
                 </div>
