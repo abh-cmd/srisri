@@ -19,24 +19,68 @@ export default function About() {
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-900/95 to-gray-800/95 text-gray-100 py-16 pt-52">
             <div className="container mx-auto px-4">
-                {/* HERO SECTION - Brand Story */}
+                {/* HERO SECTION - Brand Story + Netflix Images */}
                 <section className="mb-24">
-                    <div className="relative max-w-4xl mx-auto px-4 flex flex-col items-center justify-center">
-                        <div className="w-full md:w-4/5 bg-gray-900/70 backdrop-blur-lg rounded-3xl shadow-2xl border border-gray-700/60 p-8 md:p-14 flex flex-col items-center text-center"
-                          style={{boxShadow:'0 8px 32px 0 rgba(31,38,135,0.37)', border:'1.5px solid rgba(255,255,255,0.12)'}}>
-                          <h1 className="text-4xl md:text-6xl font-extrabold font-noto-serif bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-200 to-white mb-6 drop-shadow-lg">
-                            Transforming Spaces, Elevating Lifestyles
-                          </h1>
-                          <p className="text-lg md:text-2xl text-gray-200 font-noto-sans mb-8 max-w-2xl mx-auto">
-                            Sri Sai Interiors blends Indian tradition with modern luxury, crafting bespoke interiors that reflect your personality and aspirations. Since 2008, we have delivered award-winning designs for homes, offices, and commercial spaces across Hyderabad and beyond.
-                          </p>
-                          <a href="/consultation" className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-gray-900 font-bold text-lg shadow-lg hover:scale-105 hover:shadow-amber-300/40 transition-all duration-300">
-                            Book a Free Consultation
-                          </a>
+                    <div className="relative max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center md:items-stretch gap-10 md:gap-20">
+                        {/* Left: Glassy Text Box */}
+                        <div className="flex-1 flex flex-col justify-center">
+                            <div className="bg-gradient-to-br from-gray-900/90 via-gray-800/80 to-gray-900/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-gray-700/60 p-8 md:p-14 text-left md:text-left"
+                                style={{boxShadow:'0 8px 32px 0 rgba(31,38,135,0.37)', border:'1.5px solid rgba(255,255,255,0.10)'}}>
+                                <h1 className="text-4xl md:text-6xl font-extrabold font-noto-serif bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-200 to-white mb-8 drop-shadow-lg">
+                                    Transforming Spaces, Elevating Lifestyles
+                                </h1>
+                                <a href="/consultation" className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-gray-900 font-bold text-lg shadow-lg hover:scale-105 hover:shadow-amber-300/40 transition-all duration-300">
+                                    Book a Free Consultation
+                                </a>
+                            </div>
                         </div>
-                        <div className="relative w-64 h-64 md:w-80 md:h-80 mt-8 rounded-3xl overflow-hidden shadow-2xl border-4 border-amber-400/30 bg-gradient-to-br from-amber-100/10 to-gray-900/40">
-                          <Image src="/image/aboutfront.png" alt="Sri Sai Interiors Team" fill className="object-cover" />
-                          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent" />
+                        {/* Right: Netflix-style Images */}
+                        <div className="flex-1 flex flex-col justify-center">
+                            <div className="flex flex-row md:flex-col gap-6 md:gap-8 items-center justify-center h-full">
+                                {["/image/living.jpg","/image/kitchen.png","/image/office-interior.jpg"].map((src,i)=>(
+                                    <div key={i} className="relative rounded-2xl overflow-hidden shadow-lg group w-40 h-32 md:w-64 md:h-44 flex-shrink-0 transition-transform duration-500 hover:scale-110 hover:z-10" style={{transition:'transform 0.4s cubic-bezier(.34,1.56,.64,1)'}}>
+                                        <Image src={src} alt="Project" fill className="object-cover w-full h-full group-hover:brightness-110 group-hover:scale-110 transition-transform duration-500" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* HOW SRI SAI INTERIORS WORKS - Flowchart */}
+                <section className="mb-24">
+                    <div className="max-w-5xl mx-auto">
+                        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-200 to-white drop-shadow-lg">How Sri Sai Interiors Works</h2>
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+                            {/* Step 1 */}
+                            <div className="flex flex-col items-center">
+                                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-400 via-amber-300 to-yellow-200 flex items-center justify-center shadow-lg mb-4">
+                                    <FaRegBuilding className="text-4xl text-gray-900" />
+                                </div>
+                                <h4 className="font-bold text-lg mb-1 text-yellow-200">Consultation</h4>
+                                <p className="text-gray-200 text-center max-w-xs">We understand your needs, style, and budget.</p>
+                            </div>
+                            {/* Arrow */}
+                            <div className="hidden md:block text-5xl text-yellow-300">→</div>
+                            {/* Step 2 */}
+                            <div className="flex flex-col items-center">
+                                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-400 via-amber-300 to-yellow-200 flex items-center justify-center shadow-lg mb-4">
+                                    <FaUsers className="text-4xl text-gray-900" />
+                                </div>
+                                <h4 className="font-bold text-lg mb-1 text-yellow-200">Design & Planning</h4>
+                                <p className="text-gray-200 text-center max-w-xs">Our experts craft a personalized design and plan every detail.</p>
+                            </div>
+                            {/* Arrow */}
+                            <div className="hidden md:block text-5xl text-yellow-300">→</div>
+                            {/* Step 3 */}
+                            <div className="flex flex-col items-center">
+                                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-400 via-amber-300 to-yellow-200 flex items-center justify-center shadow-lg mb-4">
+                                    <FaRegSmile className="text-4xl text-gray-900" />
+                                </div>
+                                <h4 className="font-bold text-lg mb-1 text-yellow-200">Execution & Handover</h4>
+                                <p className="text-gray-200 text-center max-w-xs">We deliver your dream space, on time and with a smile.</p>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -320,30 +364,17 @@ export default function About() {
 
                 {/* Contact Information Section */}
                 <section className="mb-24">
-                    <div className="max-w-7xl mx-auto px-4">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                            className="text-center mb-16 relative"
-                        >
-                            <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 via-transparent to-gray-900/50 -z-10"></div>
-                            <h2 className="text-5xl md:text-6xl font-noto-serif font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-amber-100 to-gray-300 mb-4 hover:scale-105 transition-transform duration-300">
-                                Contact Information
+                    <div className="max-w-5xl mx-auto px-4">
+                        <div className="text-center mb-16 relative">
+                            <div className="absolute inset-0 bg-gradient-to-b from-yellow-900/30 via-gray-900/80 to-gray-900/90 -z-10 rounded-2xl blur-sm"></div>
+                            <h2 className="text-5xl md:text-6xl font-noto-serif font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-200 to-white mb-4 drop-shadow-lg tracking-tight">
+                                Get in Touch with Sri Sai Interiors
                             </h2>
-                            <p className="text-gray-300 font-noto-sans text-xl mb-6">Reach out to us for your interior design needs</p>
-                            <div className="h-1 w-32 bg-gradient-to-r from-amber-500 to-transparent mx-auto transform hover:scale-x-110 transition-transform duration-300"></div>
-                        </motion.div>
+                            <div className="h-1 w-32 bg-gradient-to-r from-amber-500 to-transparent mx-auto mt-4"></div>
+                        </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {/* Phone */}
-                            <motion.div 
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.2 }}
-                                className="group bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-700/50 hover:border-amber-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/10"
-                            >
+                            <div className="group bg-gradient-to-br from-gray-900/90 via-gray-800/80 to-gray-900/80 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-gray-700/50 hover:border-amber-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/10">
                                 <div className="flex flex-col items-center text-center">
                                     <div className="w-16 h-16 rounded-full bg-amber-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
                                         <MdPhone className="text-3xl text-amber-200" />
@@ -353,16 +384,10 @@ export default function About() {
                                         +91 98765 43210
                                     </a>
                                 </div>
-                            </motion.div>
+                            </div>
 
                             {/* Email */}
-                            <motion.div 
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.4 }}
-                                className="group bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-700/50 hover:border-amber-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/10"
-                            >
+                            <div className="group bg-gradient-to-br from-gray-900/90 via-gray-800/80 to-gray-900/80 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-gray-700/50 hover:border-amber-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/10">
                                 <div className="flex flex-col items-center text-center">
                                     <div className="w-16 h-16 rounded-full bg-amber-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
                                         <MdEmail className="text-3xl text-amber-200" />
@@ -372,16 +397,10 @@ export default function About() {
                                         info@srisaiinteriors.com
                                     </a>
                                 </div>
-                            </motion.div>
+                            </div>
 
                             {/* Location */}
-                            <motion.div 
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.6 }}
-                                className="group bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-700/50 hover:border-amber-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/10 relative"
-                            >
+                            <div className="group bg-gradient-to-br from-gray-900/90 via-gray-800/80 to-gray-900/80 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-gray-700/50 hover:border-amber-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/10 relative">
                                 <div className="flex flex-col items-center text-center">
                                     <div className="w-16 h-16 rounded-full bg-amber-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
                                         <MdLocationOn className="text-3xl text-amber-200" />
@@ -409,7 +428,7 @@ export default function About() {
                                         </div>
                                     </div>
                                 </div>
-                            </motion.div>
+                            </div>
                         </div>
                     </div>
                 </section>
