@@ -123,7 +123,7 @@ const HeroSection = () => {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.6 }}
-                            className="fixed top-5 right-12 flex flex-col items-center pointer-events-none select-none"
+                            className="fixed top-20 right-12 flex flex-col items-center pointer-events-none select-none"
                             style={{ zIndex: 50 }}
                         >
                             <span className="text-xs text-white/80 mb-1 font-semibold tracking-wide animate-pulse">Menu</span>
