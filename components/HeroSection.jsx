@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import PhonePopup from './PhonePopup';
 import ConsultationModal from './ConsultationModal';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaArrowDown } from 'react-icons/fa';
+import { FaArrowUp } from 'react-icons/fa';
 
 const HeroSection = () => {
     const [showPhonePopup, setShowPhonePopup] = useState(false);
@@ -126,7 +126,14 @@ const HeroSection = () => {
                             className="fixed top-28 right-6 flex flex-col items-center pointer-events-none select-none"
                             style={{ zIndex: 50 }}
                         >
-                            <FaArrowDown className="text-yellow-400 text-2xl drop-shadow-lg animate-bounce" />
+                            <motion.span
+                                initial={{ y: 0 }}
+                                animate={{ y: [-10, 0, -10] }}
+                                transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
+                                className=""
+                            >
+                                <FaArrowUp className="text-yellow-400 text-2xl drop-shadow-lg" />
+                            </motion.span>
                             <span className="text-xs text-white/80 mt-1 font-semibold tracking-wide animate-pulse">Menu</span>
                         </motion.div>
                     )}
