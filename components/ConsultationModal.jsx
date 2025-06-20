@@ -97,20 +97,20 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+                    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-[3px]"
                     onClick={onClose}
                 >
                     <motion.div
                         initial={{ scale: 0.9, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.9, opacity: 0 }}
-                        className="relative w-full max-w-xs sm:max-w-xs md:max-w-xl bg-gradient-to-br from-gray-900/80 to-black/80 rounded-2xl shadow-2xl overflow-hidden p-1 sm:p-2 md:p-4 max-h-[80vh] overflow-y-auto"
+                        className="relative w-full max-w-xs sm:max-w-xs md:max-w-xl bg-gradient-to-br from-gray-900/70 via-blue-900/60 to-black/80 rounded-3xl shadow-2xl border border-amber-400/30 backdrop-blur-xl overflow-hidden p-1 sm:p-2 md:p-4 max-h-[80vh] overflow-y-auto ring-1 ring-amber-300/10"
                         onClick={e => e.stopPropagation()}
                     >
                         {/* Close Button */}
                         <button
                             onClick={onClose}
-                            className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-300 z-10"
+                            className="absolute top-4 right-4 text-gray-300 hover:text-amber-400 bg-black/30 rounded-full p-1 shadow-lg transition-all duration-300 z-10 border border-white/10 hover:scale-110"
                         >
                             <MdClose className="w-6 h-6" />
                         </button>
@@ -118,7 +118,8 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                         <div className="grid grid-cols-1 md:grid-cols-2">
                             {/* Left Column - Features (hidden on mobile) */}
                             <div className="hidden md:block p-8 bg-gradient-to-br from-amber-500/10 to-orange-500/10">
-                                <h2 className="text-2xl font-noto-serif font-semibold text-white mb-8">
+                                <h2 className="text-2xl font-noto-serif font-semibold text-white mb-8 flex items-center gap-2">
+                                    <MdBrush className="inline-block text-amber-300 mr-1" />
                                     Our Promise to You
                                 </h2>
                                 <div className="space-y-6">
@@ -154,19 +155,27 @@ const ConsultationModal = ({ isOpen, onClose }) => {
 
                             {/* Right Column - Form */}
                             <div className="p-8">
-                                <h2 className="text-2xl font-noto-serif font-semibold text-white mb-6">
+                                <h2 className="text-2xl font-noto-serif font-semibold text-white mb-6 flex items-center gap-2">
+                                    <MdPhone className="inline-block text-amber-300 mr-1" />
                                     Schedule Your Consultation
                                 </h2>
                                 <form onSubmit={handleSubmit} className="space-y-4">
+                                    <AnimatePresence>
                                     {notification && (
-                                        <div className={`p-3 rounded-lg ${
-                                            notification.type === 'success' 
-                                                ? 'bg-green-500/20 text-green-300' 
-                                                : 'bg-red-500/20 text-red-300'
-                                        }`}>
+                                        <motion.div
+                                            initial={{ y: -20, opacity: 0 }}
+                                            animate={{ y: 0, opacity: 1 }}
+                                            exit={{ y: -20, opacity: 0 }}
+                                            className={`p-3 rounded-lg shadow-lg text-center mb-2 ${
+                                                notification.type === 'success' 
+                                                    ? 'bg-green-500/20 text-green-300 border border-green-400/30' 
+                                                    : 'bg-red-500/20 text-red-300 border border-red-400/30'
+                                            }`}
+                                        >
                                             {notification.message}
-                                        </div>
+                                        </motion.div>
                                     )}
+                                    </AnimatePresence>
 
                                     <div>
                                         <input
@@ -175,7 +184,7 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                                             value={formData.name}
                                             onChange={handleChange}
                                             placeholder="Your Name"
-                                            className="w-full px-4 py-3 bg-black/30 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-500/50 transition-colors duration-300"
+                                            className="w-full px-4 py-3 bg-gradient-to-br from-black/30 via-blue-900/20 to-black/40 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-amber-400/60 focus:ring-2 focus:ring-amber-300/30 shadow-inner transition-all duration-300"
                                         />
                                         {errors.name && <p className="mt-1 text-red-400 text-sm">{errors.name}</p>}
                                     </div>
@@ -187,7 +196,7 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                                             value={formData.mobile}
                                             onChange={handleChange}
                                             placeholder="Mobile Number"
-                                            className="w-full px-4 py-3 bg-black/30 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-500/50 transition-colors duration-300"
+                                            className="w-full px-4 py-3 bg-gradient-to-br from-black/30 via-blue-900/20 to-black/40 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-amber-400/60 focus:ring-2 focus:ring-amber-300/30 shadow-inner transition-all duration-300"
                                         />
                                         {errors.mobile && <p className="mt-1 text-red-400 text-sm">{errors.mobile}</p>}
                                     </div>
@@ -199,24 +208,20 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                                             value={formData.email}
                                             onChange={handleChange}
                                             placeholder="Email Address"
-                                            className="w-full px-4 py-3 bg-black/30 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-500/50 transition-colors duration-300"
+                                            className="w-full px-4 py-3 bg-gradient-to-br from-black/30 via-blue-900/20 to-black/40 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-amber-400/60 focus:ring-2 focus:ring-amber-300/30 shadow-inner transition-all duration-300"
                                         />
                                         {errors.email && <p className="mt-1 text-red-400 text-sm">{errors.email}</p>}
                                     </div>
 
                                     <div>
-                                        <select
+                                        <input
+                                            type="text"
                                             name="homeType"
                                             value={formData.homeType}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 bg-black/30 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-500/50 transition-colors duration-300"
-                                        >
-                                            <option value="">Select Home Type</option>
-                                            <option value="apartment">Apartment</option>
-                                            <option value="house">House</option>
-                                            <option value="villa">Villa</option>
-                                            <option value="commercial">Commercial Space</option>
-                                        </select>
+                                            placeholder="Home Type (Optional)"
+                                            className="w-full px-4 py-3 bg-gradient-to-br from-black/30 via-blue-900/20 to-black/40 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-amber-400/60 focus:ring-2 focus:ring-amber-300/30 shadow-inner transition-all duration-300"
+                                        />
                                     </div>
 
                                     <div>
@@ -225,8 +230,8 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                                             name="location"
                                             value={formData.location}
                                             onChange={handleChange}
-                                            placeholder="Your Location"
-                                            className="w-full px-4 py-3 bg-black/30 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-500/50 transition-colors duration-300"
+                                            placeholder="Location"
+                                            className="w-full px-4 py-3 bg-gradient-to-br from-black/30 via-blue-900/20 to-black/40 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-amber-400/60 focus:ring-2 focus:ring-amber-300/30 shadow-inner transition-all duration-300"
                                         />
                                         {errors.location && <p className="mt-1 text-red-400 text-sm">{errors.location}</p>}
                                     </div>
@@ -234,11 +239,19 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                                     <button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className={`w-full py-3 px-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-medium rounded-lg transition-all duration-300 ${
-                                            isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
-                                        }`}
+                                        className="w-full py-3 bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-400 text-black font-bold rounded-2xl shadow-xl hover:from-yellow-400 hover:to-amber-400 hover:shadow-amber-200/40 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-300/40 disabled:opacity-60 disabled:cursor-not-allowed relative overflow-hidden"
                                     >
-                                        {isSubmitting ? 'Submitting...' : 'Schedule Consultation'}
+                                        {isSubmitting ? (
+                                            <span className="flex items-center justify-center gap-2">
+                                                <svg className="animate-spin h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+                                                </svg>
+                                                Sending...
+                                            </span>
+                                        ) : (
+                                            'Request Consultation'
+                                        )}
                                     </button>
                                 </form>
                             </div>
