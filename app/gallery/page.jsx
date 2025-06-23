@@ -43,9 +43,21 @@ export default function Gallery() {
     ];
 
     return (
-        <div className="min-h-screen bg-white py-16 pt-32">
+        <div className="relative min-h-screen py-16 pt-32 overflow-hidden">
+            {/* Background Image */}
+            <div className="absolute inset-0 w-full h-full -z-10">
+                <Image
+                    src="/image/gallery.jpg"
+                    alt="Gallery Background"
+                    fill
+                    className="object-cover object-center"
+                    priority
+                />
+                {/* Overlay for readability */}
+                <div className="absolute inset-0 bg-black/60" />
+            </div>
             <div className="container mx-auto px-4">
-                <h1 className="text-4xl md:text-6xl font-bold text-center text-gray-800 mb-12">Our Gallery</h1>
+                <h1 className="text-4xl md:text-6xl font-bold text-center text-white mb-12 drop-shadow-lg">Our Gallery</h1>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {images.map((image, idx) => (
                         <div
