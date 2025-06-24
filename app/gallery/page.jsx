@@ -58,6 +58,15 @@ export default function Gallery() {
             </div>
             <div className="container mx-auto px-4">
                 <h1 className="text-4xl md:text-6xl font-bold text-center text-white mb-12 drop-shadow-lg">Our Gallery</h1>
+                {/* Our Design Process Box - Restored */}
+                <div className="max-w-2xl mx-auto mb-12">
+                    <div className="bg-gray-900/70 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-xl border border-white/10">
+                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 text-center">Our Design Process</h2>
+                        <p className="text-gray-200 text-center text-base md:text-lg font-medium">
+                            We follow a collaborative, step-by-step approach to transform your vision into reality. From initial consultation and concept development to material selection, execution, and final handover, our team ensures a seamless and enjoyable experience at every stage.
+                        </p>
+                    </div>
+                </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {images.map((image, idx) => (
                         <div
