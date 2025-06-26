@@ -45,7 +45,12 @@ export default function Gallery() {
     return (
         <div className="relative min-h-screen py-16 pt-32 overflow-hidden bg-[rgba(220,220,220,0.7)] backdrop-blur-md">
             <div className="container mx-auto px-4">
-                <h1 className="text-4xl md:text-6xl font-bold text-center text-white mb-12 drop-shadow-lg">Our Gallery</h1>
+                {/* Our Gallery Heading with Effects */}
+                <div className="flex justify-center mb-12">
+                    <div className="bg-black/60 backdrop-blur-lg rounded-3xl px-8 py-6 shadow-2xl border border-white/20 flex items-center justify-center">
+                        <h1 className="text-4xl md:text-6xl font-bold text-center text-white drop-shadow-lg glow-text">Our Gallery</h1>
+                    </div>
+                </div>
                 {/* Our Design Process Box - Restored */}
                 <div className="max-w-2xl mx-auto mb-12">
                     <div className="bg-gray-900/70 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-xl border border-white/10">
