@@ -48,7 +48,7 @@ export default function Gallery() {
                 {/* Our Gallery Heading with Effects */}
                 <div className="flex justify-center mb-12">
                     <div className="bg-black/60 backdrop-blur-lg rounded-3xl px-8 py-6 shadow-2xl border border-white/20 flex items-center justify-center">
-                        <h1 className="text-4xl md:text-6xl font-bold text-center text-white drop-shadow-lg glow-text">Our Gallery</h1>
+                        <h1 className="text-4xl md:text-6xl font-bold text-center text-white drop-shadow-lg">Our Gallery</h1>
                     </div>
                 </div>
                 {/* Our Design Process Box - Restored */}
